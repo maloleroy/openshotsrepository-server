@@ -1,0 +1,123 @@
+[
+  {
+    "path": "store/36c31f817ef1a4e9.pkl",
+    "key": null,
+    "index": 0,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 1.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 16,
+    "max_occurrences": 3165
+  },
+  {
+    "path": "store/45002481120aeab0.pkl",
+    "key": null,
+    "index": 0,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 1.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 16,
+    "max_occurrences": 7419
+  },
+  {
+    "path": "store/45002481120aeab0.pkl",
+    "key": null,
+    "index": 1,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 3.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 16,
+    "max_occurrences": 5338
+  },
+  {
+    "path": "store/45002481120aeab0.pkl",
+    "key": null,
+    "index": 2,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 5.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 16,
+    "max_occurrences": 4208
+  },
+  {
+    "path": "store/45002481120aeab0.pkl",
+    "key": null,
+    "index": 3,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 7.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 16,
+    "max_occurrences": 3569
+  },
+  {
+    "path": "store/48837100bddef0b7.pkl",
+    "key": null,
+    "index": 0,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 1.0,
+    "bit_width": 52,
+    "shots": 1024,
+    "unique_samples": 1024,
+    "max_occurrences": 1
+  },
+  {
+    "path": "store/6724b1c7092465c0.pkl",
+    "key": null,
+    "index": 0,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 1.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 12,
+    "max_occurrences": 22784
+  },
+  {
+    "path": "store/6724b1c7092465c0.pkl",
+    "key": null,
+    "index": 1,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 3.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 12,
+    "max_occurrences": 22199
+  },
+  {
+    "path": "store/6724b1c7092465c0.pkl",
+    "key": null,
+    "index": 2,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 5.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 13,
+    "max_occurrences": 21617
+  },
+  {
+    "path": "store/6724b1c7092465c0.pkl",
+    "key": null,
+    "index": 3,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 7.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 14,
+    "max_occurrences": 21158
+  },
+  {
+    "path": "store/6af659c4996faf4f.pkl",
+    "key": null,
+    "index": 0,
+    "kind": "legacy_execution_counts",
+    "noise_factor": 1.0,
+    "bit_width": 4,
+    "shots": 25000,
+    "unique_samples": 16,
+    "max_occurrences": 5414
+  }
+]

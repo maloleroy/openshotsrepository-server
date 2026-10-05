@@ -1,0 +1,3500 @@
+[
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+    "sha256": "8cba8683766e6d9d78eef9862c451a4d9fc5d3d4389c6decf2aec0f3553afd12",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.55000000000000004",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+    "sha256": "b73ec1ee82f6a4d19d277cb19da9a358ffd7cb651771ff67064d82dfc4852186",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+    "sha256": "d35f10c04a554d26c406979b8b01c1e4eaf31e1387d5c4a8a794da35e41bf605",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-09-18.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+    "sha256": "8cba8683766e6d9d78eef9862c451a4d9fc5d3d4389c6decf2aec0f3553afd12",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.55000000000000004",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+    "sha256": "b73ec1ee82f6a4d19d277cb19da9a358ffd7cb651771ff67064d82dfc4852186",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+    "sha256": "d35f10c04a554d26c406979b8b01c1e4eaf31e1387d5c4a8a794da35e41bf605",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-09.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+    "sha256": "8cba8683766e6d9d78eef9862c451a4d9fc5d3d4389c6decf2aec0f3553afd12",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.55000000000000004",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+    "sha256": "b73ec1ee82f6a4d19d277cb19da9a358ffd7cb651771ff67064d82dfc4852186",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+    "sha256": "d35f10c04a554d26c406979b8b01c1e4eaf31e1387d5c4a8a794da35e41bf605",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-16.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+    "sha256": "8cba8683766e6d9d78eef9862c451a4d9fc5d3d4389c6decf2aec0f3553afd12",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.55000000000000004",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+    "sha256": "b73ec1ee82f6a4d19d277cb19da9a358ffd7cb651771ff67064d82dfc4852186",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+    "sha256": "d35f10c04a554d26c406979b8b01c1e4eaf31e1387d5c4a8a794da35e41bf605",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-10-23.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+    "sha256": "8cba8683766e6d9d78eef9862c451a4d9fc5d3d4389c6decf2aec0f3553afd12",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.55000000000000004",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+    "sha256": "b73ec1ee82f6a4d19d277cb19da9a358ffd7cb651771ff67064d82dfc4852186",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+    "sha256": "d35f10c04a554d26c406979b8b01c1e4eaf31e1387d5c4a8a794da35e41bf605",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-07.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet6.xlsx",
+    "sha256": "8cba8683766e6d9d78eef9862c451a4d9fc5d3d4389c6decf2aec0f3553afd12",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.55000000000000004",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.1",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet5.xlsx",
+    "sha256": "b73ec1ee82f6a4d19d277cb19da9a358ffd7cb651771ff67064d82dfc4852186",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.2",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet4.xlsx",
+    "sha256": "d35f10c04a554d26c406979b8b01c1e4eaf31e1387d5c4a8a794da35e41bf605",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Column1",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "0.25",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet3.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet2.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet1.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "presentation": "docs/slides/2025-11-13.pptx",
+    "embedded_path": "ppt/embeddings/Microsoft_Excel_Worksheet.xlsx",
+    "sha256": "ea45d8e48ce44a6efb5ce31958f0df72009712291997be6474d8dc3552b26280",
+    "sheets": [
+      {
+        "xml_path": "xl/worksheets/sheet1.xml",
+        "name": "Sheet1",
+        "cells": [
+          {
+            "cell": "A1",
+            "type": "s",
+            "value": " ",
+            "formula": null
+          },
+          {
+            "cell": "B1",
+            "type": "s",
+            "value": "Caption 1",
+            "formula": null
+          },
+          {
+            "cell": "C1",
+            "type": "s",
+            "value": "Caption 2",
+            "formula": null
+          },
+          {
+            "cell": "A2",
+            "type": "s",
+            "value": "Lorem Ipsum 4",
+            "formula": null
+          },
+          {
+            "cell": "B2",
+            "type": "n",
+            "value": "4",
+            "formula": null
+          },
+          {
+            "cell": "C2",
+            "type": "n",
+            "value": "0",
+            "formula": null
+          },
+          {
+            "cell": "A3",
+            "type": "s",
+            "value": "Lorem Ipsum 3",
+            "formula": null
+          },
+          {
+            "cell": "B3",
+            "type": "n",
+            "value": "5",
+            "formula": null
+          },
+          {
+            "cell": "C3",
+            "type": "n",
+            "value": "1",
+            "formula": null
+          },
+          {
+            "cell": "A4",
+            "type": "s",
+            "value": "Lorem Ipsum 2",
+            "formula": null
+          },
+          {
+            "cell": "B4",
+            "type": "n",
+            "value": "6",
+            "formula": null
+          },
+          {
+            "cell": "C4",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "A5",
+            "type": "s",
+            "value": "Lorem Ipsum 1",
+            "formula": null
+          },
+          {
+            "cell": "B5",
+            "type": "n",
+            "value": "9",
+            "formula": null
+          },
+          {
+            "cell": "C5",
+            "type": "n",
+            "value": "3",
+            "formula": null
+          },
+          {
+            "cell": "B6",
+            "type": "s",
+            "value": "To update the chart, enter data into this table. The data is automatically saved in the chart.",
+            "formula": null
+          }
+        ]
+      }
+    ]
+  }
+]

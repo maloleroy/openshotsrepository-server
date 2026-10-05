@@ -171,7 +171,7 @@ def main():
     write_json(out / 'source-data-legacy-counts.json', legacy)
     fields = ['path', 'key', 'index', 'kind', 'bit_width', 'noise_factor', 'shots', 'unique_samples', 'max_occurrences', 'entries', 'sum', 'min', 'max', 'negative_entries']
     with (out / 'source-shot-catalog.csv').open('w', newline='') as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore')
+        writer = csv.DictWriter(stream, fieldnames=fields, extrasaction='ignore', lineterminator='\n')
         writer.writeheader()
         for record in payloads['samples']:
             writer.writerow({**record, 'kind': record.get('kind', 'observed_samples')})

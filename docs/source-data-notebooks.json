@@ -1,0 +1,2845 @@
+[
+  {
+    "path": "notebooks/Best_circuits.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 15,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 1,
+        "type": "code",
+        "source_characters": 1546,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "markdown",
+        "source_characters": 21,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 3,
+        "type": "markdown",
+        "source_characters": 98,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 761,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 1206,
+        "text_output_characters": 3496,
+        "data_terms": []
+      },
+      {
+        "index": 6,
+        "type": "markdown",
+        "source_characters": 536,
+        "text_output_characters": 0,
+        "data_terms": [
+          "calibration",
+          "circuit",
+          "counts",
+          "qubit"
+        ]
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 1492,
+        "text_output_characters": 0,
+        "data_terms": [
+          "calibration",
+          "layout"
+        ]
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 3281,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "markdown",
+        "source_characters": 193,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 57,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 11,
+        "type": "code",
+        "source_characters": 896,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 346,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 502,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 14,
+        "type": "markdown",
+        "source_characters": 24,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 1385,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit"
+        ]
+      },
+      {
+        "index": 16,
+        "type": "code",
+        "source_characters": 358,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 17,
+        "type": "code",
+        "source_characters": 503,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 18,
+        "type": "markdown",
+        "source_characters": 54,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 19,
+        "type": "code",
+        "source_characters": 305,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 20,
+        "type": "code",
+        "source_characters": 136,
+        "text_output_characters": 35,
+        "data_terms": []
+      },
+      {
+        "index": 21,
+        "type": "markdown",
+        "source_characters": 92,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 22,
+        "type": "code",
+        "source_characters": 965,
+        "text_output_characters": 163,
+        "data_terms": []
+      },
+      {
+        "index": 23,
+        "type": "markdown",
+        "source_characters": 45,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 24,
+        "type": "code",
+        "source_characters": 1811,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 25,
+        "type": "markdown",
+        "source_characters": 30,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 26,
+        "type": "code",
+        "source_characters": 1715,
+        "text_output_characters": 567,
+        "data_terms": [
+          "circuit"
+        ]
+      },
+      {
+        "index": 27,
+        "type": "code",
+        "source_characters": 905,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit"
+        ]
+      },
+      {
+        "index": 28,
+        "type": "markdown",
+        "source_characters": 127,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 29,
+        "type": "code",
+        "source_characters": 1381,
+        "text_output_characters": 307,
+        "data_terms": []
+      },
+      {
+        "index": 30,
+        "type": "code",
+        "source_characters": 13,
+        "text_output_characters": 208,
+        "data_terms": []
+      },
+      {
+        "index": 31,
+        "type": "code",
+        "source_characters": 818,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit",
+          "qubit"
+        ]
+      },
+      {
+        "index": 32,
+        "type": "markdown",
+        "source_characters": 52,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 33,
+        "type": "code",
+        "source_characters": 2751,
+        "text_output_characters": 7640,
+        "data_terms": [
+          "counts"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "notebooks/ClusteringConditionsAnalysis.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 4841,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit",
+          "count",
+          "counts",
+          "qubit",
+          "shot",
+          "shots"
+        ]
+      },
+      {
+        "index": 1,
+        "type": "markdown",
+        "source_characters": 52,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "markdown",
+        "source_characters": 62,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 3,
+        "type": "markdown",
+        "source_characters": 1971,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit",
+          "count",
+          "qubit",
+          "shot",
+          "shots"
+        ]
+      },
+      {
+        "index": 4,
+        "type": "markdown",
+        "source_characters": 66,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 5,
+        "type": "markdown",
+        "source_characters": 62,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 6,
+        "type": "markdown",
+        "source_characters": 64,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 7,
+        "type": "markdown",
+        "source_characters": 52,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 8,
+        "type": "markdown",
+        "source_characters": 3144,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "qubit",
+          "shot"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "markdown",
+        "source_characters": 62,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 10,
+        "type": "markdown",
+        "source_characters": 68,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 11,
+        "type": "markdown",
+        "source_characters": 1263,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 12,
+        "type": "markdown",
+        "source_characters": 50,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 13,
+        "type": "markdown",
+        "source_characters": 62,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 14,
+        "type": "markdown",
+        "source_characters": 60,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 15,
+        "type": "markdown",
+        "source_characters": 56,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 16,
+        "type": "markdown",
+        "source_characters": 4953,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit",
+          "qubit",
+          "shot",
+          "shots"
+        ]
+      },
+      {
+        "index": 17,
+        "type": "markdown",
+        "source_characters": 64,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 18,
+        "type": "markdown",
+        "source_characters": 9251,
+        "text_output_characters": 0,
+        "data_terms": [
+          "calibration",
+          "circuit",
+          "count",
+          "counts",
+          "layout",
+          "qaoa",
+          "qubit",
+          "samples",
+          "shot",
+          "shots"
+        ]
+      },
+      {
+        "index": 19,
+        "type": "code",
+        "source_characters": 464,
+        "text_output_characters": 0,
+        "data_terms": []
+      }
+    ]
+  },
+  {
+    "path": "notebooks/Neighborhoods.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 43,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 1,
+        "type": "code",
+        "source_characters": 469,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 270,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 3,
+        "type": "code",
+        "source_characters": 322,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 4,
+        "type": "markdown",
+        "source_characters": 21,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 5,
+        "type": "markdown",
+        "source_characters": 47,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 334,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 1104,
+        "text_output_characters": 484,
+        "data_terms": [
+          "layout",
+          "qubit"
+        ]
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 2042,
+        "text_output_characters": 5335,
+        "data_terms": [
+          "count",
+          "counts",
+          "qubit"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "code",
+        "source_characters": 1770,
+        "text_output_characters": 101,
+        "data_terms": [
+          "count",
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 1121,
+        "text_output_characters": 206,
+        "data_terms": [
+          "count",
+          "counts",
+          "qubit"
+        ]
+      },
+      {
+        "index": 11,
+        "type": "markdown",
+        "source_characters": 41,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "shot"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 406,
+        "text_output_characters": 304,
+        "data_terms": [
+          "runtime",
+          "shots"
+        ]
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 2160,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout",
+          "shots"
+        ]
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 105,
+        "text_output_characters": 101,
+        "data_terms": []
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 2042,
+        "text_output_characters": 206,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 16,
+        "type": "markdown",
+        "source_characters": 37,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 17,
+        "type": "code",
+        "source_characters": 534,
+        "text_output_characters": 35,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 18,
+        "type": "markdown",
+        "source_characters": 36,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 19,
+        "type": "code",
+        "source_characters": 1266,
+        "text_output_characters": 66,
+        "data_terms": [
+          "counts",
+          "qubit",
+          "shots"
+        ]
+      },
+      {
+        "index": 20,
+        "type": "code",
+        "source_characters": 1392,
+        "text_output_characters": 206,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 21,
+        "type": "code",
+        "source_characters": 2719,
+        "text_output_characters": 35,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 22,
+        "type": "markdown",
+        "source_characters": 61,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 23,
+        "type": "code",
+        "source_characters": 595,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 24,
+        "type": "code",
+        "source_characters": 344,
+        "text_output_characters": 137,
+        "data_terms": []
+      },
+      {
+        "index": 25,
+        "type": "code",
+        "source_characters": 873,
+        "text_output_characters": 206,
+        "data_terms": []
+      }
+    ]
+  },
+  {
+    "path": "notebooks/Parts.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 43,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 1,
+        "type": "code",
+        "source_characters": 512,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 272,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 3,
+        "type": "markdown",
+        "source_characters": 23,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 1072,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 35,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 450,
+        "text_output_characters": 279,
+        "data_terms": []
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 411,
+        "text_output_characters": 43,
+        "data_terms": []
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 628,
+        "text_output_characters": 35,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "markdown",
+        "source_characters": 143,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 1243,
+        "text_output_characters": 35,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 11,
+        "type": "code",
+        "source_characters": 1409,
+        "text_output_characters": 35,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "markdown",
+        "source_characters": 28,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 225,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 1787,
+        "text_output_characters": 35,
+        "data_terms": []
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 940,
+        "text_output_characters": 768,
+        "data_terms": []
+      },
+      {
+        "index": 16,
+        "type": "code",
+        "source_characters": 957,
+        "text_output_characters": 35,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 17,
+        "type": "markdown",
+        "source_characters": 53,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 18,
+        "type": "code",
+        "source_characters": 275,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 19,
+        "type": "code",
+        "source_characters": 819,
+        "text_output_characters": 35,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 20,
+        "type": "markdown",
+        "source_characters": 54,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 21,
+        "type": "code",
+        "source_characters": 792,
+        "text_output_characters": 306,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 22,
+        "type": "markdown",
+        "source_characters": 46,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 23,
+        "type": "code",
+        "source_characters": 1484,
+        "text_output_characters": 468,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 24,
+        "type": "code",
+        "source_characters": 1697,
+        "text_output_characters": 99,
+        "data_terms": [
+          "count",
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 25,
+        "type": "code",
+        "source_characters": 1131,
+        "text_output_characters": 36,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 26,
+        "type": "markdown",
+        "source_characters": 41,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "shot"
+        ]
+      },
+      {
+        "index": 27,
+        "type": "code",
+        "source_characters": 406,
+        "text_output_characters": 385,
+        "data_terms": [
+          "runtime",
+          "shots"
+        ]
+      },
+      {
+        "index": 28,
+        "type": "code",
+        "source_characters": 2161,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout",
+          "shots"
+        ]
+      },
+      {
+        "index": 29,
+        "type": "code",
+        "source_characters": 105,
+        "text_output_characters": 99,
+        "data_terms": []
+      },
+      {
+        "index": 30,
+        "type": "code",
+        "source_characters": 2011,
+        "text_output_characters": 37,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 31,
+        "type": "markdown",
+        "source_characters": 76,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 32,
+        "type": "code",
+        "source_characters": 333,
+        "text_output_characters": 263,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 33,
+        "type": "code",
+        "source_characters": 1103,
+        "text_output_characters": 79,
+        "data_terms": [
+          "layout",
+          "shots"
+        ]
+      },
+      {
+        "index": 34,
+        "type": "code",
+        "source_characters": 420,
+        "text_output_characters": 51,
+        "data_terms": []
+      },
+      {
+        "index": 35,
+        "type": "code",
+        "source_characters": 138,
+        "text_output_characters": 560,
+        "data_terms": []
+      },
+      {
+        "index": 36,
+        "type": "markdown",
+        "source_characters": 21,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 37,
+        "type": "code",
+        "source_characters": 1332,
+        "text_output_characters": 37,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 38,
+        "type": "code",
+        "source_characters": 1438,
+        "text_output_characters": 36,
+        "data_terms": [
+          "layout"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "notebooks/Peaked_circuits.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 182,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 1,
+        "type": "code",
+        "source_characters": 801,
+        "text_output_characters": 185,
+        "data_terms": [
+          "layout",
+          "qubit",
+          "samples",
+          "shot"
+        ]
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 1421,
+        "text_output_characters": 372,
+        "data_terms": [
+          "counts",
+          "shots"
+        ]
+      },
+      {
+        "index": 3,
+        "type": "code",
+        "source_characters": 333,
+        "text_output_characters": 20,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 822,
+        "text_output_characters": 190,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 5,
+        "type": "markdown",
+        "source_characters": 12,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 1007,
+        "text_output_characters": 37,
+        "data_terms": []
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 620,
+        "text_output_characters": 35,
+        "data_terms": []
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 1819,
+        "text_output_characters": 37,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "markdown",
+        "source_characters": 13,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 1155,
+        "text_output_characters": 0,
+        "data_terms": [
+          "ibm_boston",
+          "qubit"
+        ]
+      },
+      {
+        "index": 11,
+        "type": "code",
+        "source_characters": 679,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 1768,
+        "text_output_characters": 609,
+        "data_terms": [
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 13,
+        "type": "markdown",
+        "source_characters": 15,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 313,
+        "text_output_characters": 35,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 371,
+        "text_output_characters": 17,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 16,
+        "type": "code",
+        "source_characters": 882,
+        "text_output_characters": 35,
+        "data_terms": []
+      },
+      {
+        "index": 17,
+        "type": "markdown",
+        "source_characters": 138,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 18,
+        "type": "code",
+        "source_characters": 760,
+        "text_output_characters": 105,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 19,
+        "type": "markdown",
+        "source_characters": 17,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 20,
+        "type": "code",
+        "source_characters": 1145,
+        "text_output_characters": 944,
+        "data_terms": [
+          "layout",
+          "qubit",
+          "shots"
+        ]
+      },
+      {
+        "index": 21,
+        "type": "markdown",
+        "source_characters": 14,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 22,
+        "type": "code",
+        "source_characters": 1546,
+        "text_output_characters": 1823,
+        "data_terms": [
+          "layout",
+          "shots"
+        ]
+      },
+      {
+        "index": 23,
+        "type": "code",
+        "source_characters": 183,
+        "text_output_characters": 35,
+        "data_terms": []
+      }
+    ]
+  },
+  {
+    "path": "notebooks/Prepare_ring_circuit.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 566,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit",
+          "layout",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 1,
+        "type": "code",
+        "source_characters": 383,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 90,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 3,
+        "type": "markdown",
+        "source_characters": 31,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 374,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 159,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 602,
+        "text_output_characters": 62,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 314,
+        "text_output_characters": 253,
+        "data_terms": [
+          "count",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 767,
+        "text_output_characters": 35,
+        "data_terms": []
+      },
+      {
+        "index": 9,
+        "type": "markdown",
+        "source_characters": 123,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 574,
+        "text_output_characters": 1592,
+        "data_terms": []
+      },
+      {
+        "index": 11,
+        "type": "markdown",
+        "source_characters": 48,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 1152,
+        "text_output_characters": 1509,
+        "data_terms": [
+          "backend",
+          "circuit",
+          "counts",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 54,
+        "text_output_characters": 39,
+        "data_terms": []
+      },
+      {
+        "index": 14,
+        "type": "markdown",
+        "source_characters": 36,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 415,
+        "text_output_characters": 1275,
+        "data_terms": [
+          "backend",
+          "circuit",
+          "counts"
+        ]
+      },
+      {
+        "index": 16,
+        "type": "markdown",
+        "source_characters": 35,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit"
+        ]
+      },
+      {
+        "index": 17,
+        "type": "code",
+        "source_characters": 101,
+        "text_output_characters": 68,
+        "data_terms": [
+          "circuit"
+        ]
+      },
+      {
+        "index": 18,
+        "type": "code",
+        "source_characters": 287,
+        "text_output_characters": 35,
+        "data_terms": [
+          "circuit",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 19,
+        "type": "markdown",
+        "source_characters": 16,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 20,
+        "type": "code",
+        "source_characters": 239,
+        "text_output_characters": 70,
+        "data_terms": []
+      },
+      {
+        "index": 21,
+        "type": "code",
+        "source_characters": 59,
+        "text_output_characters": 0,
+        "data_terms": []
+      }
+    ]
+  },
+  {
+    "path": "notebooks/Results.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 26,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 1,
+        "type": "markdown",
+        "source_characters": 31,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 1113,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "layout",
+          "qubit",
+          "shot",
+          "shots"
+        ]
+      },
+      {
+        "index": 3,
+        "type": "code",
+        "source_characters": 163,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 1383,
+        "text_output_characters": 0,
+        "data_terms": [
+          "samples"
+        ]
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 811,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 1721,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 7,
+        "type": "markdown",
+        "source_characters": 9,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 470,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "code",
+        "source_characters": 345,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 43,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 11,
+        "type": "code",
+        "source_characters": 309,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "markdown",
+        "source_characters": 20,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 190,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 1052,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 478,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qubit"
+        ]
+      },
+      {
+        "index": 16,
+        "type": "code",
+        "source_characters": 885,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 17,
+        "type": "code",
+        "source_characters": 9467,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 18,
+        "type": "code",
+        "source_characters": 421,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 19,
+        "type": "code",
+        "source_characters": 1037,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 20,
+        "type": "code",
+        "source_characters": 382,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 21,
+        "type": "code",
+        "source_characters": 342,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 22,
+        "type": "code",
+        "source_characters": 1740,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 23,
+        "type": "code",
+        "source_characters": 1383,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 24,
+        "type": "code",
+        "source_characters": 710,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 25,
+        "type": "code",
+        "source_characters": 769,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 26,
+        "type": "code",
+        "source_characters": 555,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 27,
+        "type": "markdown",
+        "source_characters": 34,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 28,
+        "type": "markdown",
+        "source_characters": 25,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 29,
+        "type": "code",
+        "source_characters": 635,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 30,
+        "type": "code",
+        "source_characters": 196,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 31,
+        "type": "markdown",
+        "source_characters": 41,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 32,
+        "type": "code",
+        "source_characters": 500,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 33,
+        "type": "code",
+        "source_characters": 631,
+        "text_output_characters": 0,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 34,
+        "type": "markdown",
+        "source_characters": 10,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 35,
+        "type": "code",
+        "source_characters": 1111,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "layout"
+        ]
+      },
+      {
+        "index": 36,
+        "type": "code",
+        "source_characters": 962,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 37,
+        "type": "code",
+        "source_characters": 561,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 38,
+        "type": "code",
+        "source_characters": 783,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 39,
+        "type": "code",
+        "source_characters": 682,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 40,
+        "type": "markdown",
+        "source_characters": 7,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 41,
+        "type": "code",
+        "source_characters": 953,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 42,
+        "type": "code",
+        "source_characters": 1112,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 43,
+        "type": "code",
+        "source_characters": 78,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 44,
+        "type": "code",
+        "source_characters": 1452,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 45,
+        "type": "markdown",
+        "source_characters": 34,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 46,
+        "type": "code",
+        "source_characters": 326,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 47,
+        "type": "markdown",
+        "source_characters": 29,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 48,
+        "type": "code",
+        "source_characters": 883,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 49,
+        "type": "code",
+        "source_characters": 550,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 50,
+        "type": "markdown",
+        "source_characters": 26,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 51,
+        "type": "code",
+        "source_characters": 448,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout",
+          "shots"
+        ]
+      },
+      {
+        "index": 52,
+        "type": "markdown",
+        "source_characters": 41,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 53,
+        "type": "code",
+        "source_characters": 804,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 54,
+        "type": "code",
+        "source_characters": 1738,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 55,
+        "type": "markdown",
+        "source_characters": 19,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 56,
+        "type": "code",
+        "source_characters": 774,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 57,
+        "type": "markdown",
+        "source_characters": 16,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 58,
+        "type": "code",
+        "source_characters": 504,
+        "text_output_characters": 0,
+        "data_terms": [
+          "runtime",
+          "shots"
+        ]
+      },
+      {
+        "index": 59,
+        "type": "code",
+        "source_characters": 573,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 60,
+        "type": "code",
+        "source_characters": 3494,
+        "text_output_characters": 0,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 61,
+        "type": "code",
+        "source_characters": 179,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 62,
+        "type": "code",
+        "source_characters": 608,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 63,
+        "type": "markdown",
+        "source_characters": 80,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 64,
+        "type": "code",
+        "source_characters": 290,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 65,
+        "type": "code",
+        "source_characters": 465,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 66,
+        "type": "code",
+        "source_characters": 904,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout",
+          "shots"
+        ]
+      },
+      {
+        "index": 67,
+        "type": "code",
+        "source_characters": 401,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 68,
+        "type": "code",
+        "source_characters": 1244,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 69,
+        "type": "code",
+        "source_characters": 79,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 70,
+        "type": "code",
+        "source_characters": 151,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 71,
+        "type": "code",
+        "source_characters": 412,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 72,
+        "type": "code",
+        "source_characters": 127,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 73,
+        "type": "markdown",
+        "source_characters": 76,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 74,
+        "type": "code",
+        "source_characters": 1044,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 75,
+        "type": "markdown",
+        "source_characters": 26,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 76,
+        "type": "code",
+        "source_characters": 434,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 77,
+        "type": "code",
+        "source_characters": 77,
+        "text_output_characters": 0,
+        "data_terms": []
+      }
+    ]
+  },
+  {
+    "path": "notebooks/.ipynb_checkpoints/Compare depths-checkpoint.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "code",
+        "source_characters": 348,
+        "text_output_characters": 0,
+        "data_terms": [
+          "circuit"
+        ]
+      },
+      {
+        "index": 1,
+        "type": "code",
+        "source_characters": 176,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 258,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 3,
+        "type": "code",
+        "source_characters": 236,
+        "text_output_characters": 0,
+        "data_terms": [
+          "backend"
+        ]
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 172,
+        "text_output_characters": 0,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 206,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 309,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 356,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 687,
+        "text_output_characters": 33,
+        "data_terms": []
+      },
+      {
+        "index": 9,
+        "type": "code",
+        "source_characters": 941,
+        "text_output_characters": 209,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 311,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 11,
+        "type": "code",
+        "source_characters": 137,
+        "text_output_characters": 0,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 574,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 608,
+        "text_output_characters": 34,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 249,
+        "text_output_characters": 213,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 411,
+        "text_output_characters": 147,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 16,
+        "type": "markdown",
+        "source_characters": 389,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 17,
+        "type": "markdown",
+        "source_characters": 102,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 18,
+        "type": "code",
+        "source_characters": 448,
+        "text_output_characters": 46,
+        "data_terms": [
+          "circuit",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 19,
+        "type": "code",
+        "source_characters": 187,
+        "text_output_characters": 22,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 20,
+        "type": "code",
+        "source_characters": 825,
+        "text_output_characters": 319,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 21,
+        "type": "code",
+        "source_characters": 602,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 22,
+        "type": "code",
+        "source_characters": 1152,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 23,
+        "type": "code",
+        "source_characters": 683,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 24,
+        "type": "code",
+        "source_characters": 931,
+        "text_output_characters": 33,
+        "data_terms": [
+          "count",
+          "counts",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 25,
+        "type": "code",
+        "source_characters": 1017,
+        "text_output_characters": 33,
+        "data_terms": [
+          "count",
+          "counts",
+          "qaoa"
+        ]
+      },
+      {
+        "index": 26,
+        "type": "code",
+        "source_characters": 656,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 27,
+        "type": "code",
+        "source_characters": 683,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 28,
+        "type": "markdown",
+        "source_characters": 282,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 29,
+        "type": "code",
+        "source_characters": 358,
+        "text_output_characters": 0,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 30,
+        "type": "code",
+        "source_characters": 558,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 31,
+        "type": "code",
+        "source_characters": 456,
+        "text_output_characters": 70,
+        "data_terms": []
+      },
+      {
+        "index": 32,
+        "type": "code",
+        "source_characters": 275,
+        "text_output_characters": 638,
+        "data_terms": []
+      },
+      {
+        "index": 33,
+        "type": "markdown",
+        "source_characters": 93,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 34,
+        "type": "markdown",
+        "source_characters": 220,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 35,
+        "type": "code",
+        "source_characters": 1561,
+        "text_output_characters": 148,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 36,
+        "type": "markdown",
+        "source_characters": 237,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 37,
+        "type": "code",
+        "source_characters": 1067,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 38,
+        "type": "code",
+        "source_characters": 138,
+        "text_output_characters": 225,
+        "data_terms": []
+      }
+    ]
+  },
+  {
+    "path": "notebooks/.ipynb_checkpoints/Compare distances-checkpoint.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "code",
+        "source_characters": 469,
+        "text_output_characters": 208,
+        "data_terms": []
+      },
+      {
+        "index": 1,
+        "type": "markdown",
+        "source_characters": 31,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "code",
+        "source_characters": 146,
+        "text_output_characters": 0,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 3,
+        "type": "code",
+        "source_characters": 121,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 4,
+        "type": "code",
+        "source_characters": 664,
+        "text_output_characters": 355,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 404,
+        "text_output_characters": 33,
+        "data_terms": [
+          "qaoa"
+        ]
+      },
+      {
+        "index": 6,
+        "type": "code",
+        "source_characters": 583,
+        "text_output_characters": 98,
+        "data_terms": [
+          "count",
+          "counts",
+          "shots"
+        ]
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 207,
+        "text_output_characters": 114,
+        "data_terms": [
+          "backend"
+        ]
+      },
+      {
+        "index": 8,
+        "type": "code",
+        "source_characters": 305,
+        "text_output_characters": 33,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 9,
+        "type": "code",
+        "source_characters": 243,
+        "text_output_characters": 415,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 96,
+        "text_output_characters": 440,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 11,
+        "type": "markdown",
+        "source_characters": 26,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 741,
+        "text_output_characters": 229,
+        "data_terms": [
+          "counts",
+          "shots"
+        ]
+      },
+      {
+        "index": 13,
+        "type": "code",
+        "source_characters": 694,
+        "text_output_characters": 13354,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 1020,
+        "text_output_characters": 33,
+        "data_terms": [
+          "count"
+        ]
+      },
+      {
+        "index": 15,
+        "type": "code",
+        "source_characters": 968,
+        "text_output_characters": 33,
+        "data_terms": [
+          "count"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "notebooks/standalone/Recap.ipynb",
+    "cells": [
+      {
+        "index": 0,
+        "type": "markdown",
+        "source_characters": 571,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 1,
+        "type": "markdown",
+        "source_characters": 125,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 2,
+        "type": "markdown",
+        "source_characters": 32,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 3,
+        "type": "code",
+        "source_characters": 530,
+        "text_output_characters": 0,
+        "data_terms": [
+          "backend",
+          "layout"
+        ]
+      },
+      {
+        "index": 4,
+        "type": "markdown",
+        "source_characters": 20,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 5,
+        "type": "code",
+        "source_characters": 899,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "qubit"
+        ]
+      },
+      {
+        "index": 6,
+        "type": "markdown",
+        "source_characters": 60,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 7,
+        "type": "code",
+        "source_characters": 492,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 8,
+        "type": "markdown",
+        "source_characters": 39,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 9,
+        "type": "code",
+        "source_characters": 758,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 10,
+        "type": "code",
+        "source_characters": 1105,
+        "text_output_characters": 34,
+        "data_terms": []
+      },
+      {
+        "index": 11,
+        "type": "markdown",
+        "source_characters": 178,
+        "text_output_characters": 0,
+        "data_terms": [
+          "layout"
+        ]
+      },
+      {
+        "index": 12,
+        "type": "code",
+        "source_characters": 1094,
+        "text_output_characters": 0,
+        "data_terms": [
+          "backend",
+          "layout",
+          "qubit"
+        ]
+      },
+      {
+        "index": 13,
+        "type": "markdown",
+        "source_characters": 254,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 14,
+        "type": "code",
+        "source_characters": 648,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 15,
+        "type": "markdown",
+        "source_characters": 241,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 16,
+        "type": "code",
+        "source_characters": 705,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts",
+          "qubit"
+        ]
+      },
+      {
+        "index": 17,
+        "type": "markdown",
+        "source_characters": 11,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 18,
+        "type": "code",
+        "source_characters": 1783,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 19,
+        "type": "markdown",
+        "source_characters": 34,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 20,
+        "type": "markdown",
+        "source_characters": 40,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 21,
+        "type": "code",
+        "source_characters": 1146,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "qubit"
+        ]
+      },
+      {
+        "index": 22,
+        "type": "markdown",
+        "source_characters": 884,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 23,
+        "type": "code",
+        "source_characters": 966,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts"
+        ]
+      },
+      {
+        "index": 24,
+        "type": "markdown",
+        "source_characters": 19,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 25,
+        "type": "code",
+        "source_characters": 3289,
+        "text_output_characters": 0,
+        "data_terms": [
+          "count",
+          "counts"
+        ]
+      },
+      {
+        "index": 26,
+        "type": "markdown",
+        "source_characters": 17,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 27,
+        "type": "markdown",
+        "source_characters": 444,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 28,
+        "type": "code",
+        "source_characters": 694,
+        "text_output_characters": 0,
+        "data_terms": [
+          "counts",
+          "shots"
+        ]
+      },
+      {
+        "index": 29,
+        "type": "code",
+        "source_characters": 827,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 30,
+        "type": "code",
+        "source_characters": 2208,
+        "text_output_characters": 36,
+        "data_terms": [
+          "shots"
+        ]
+      },
+      {
+        "index": 31,
+        "type": "markdown",
+        "source_characters": 735,
+        "text_output_characters": 0,
+        "data_terms": [
+          "samples"
+        ]
+      },
+      {
+        "index": 32,
+        "type": "code",
+        "source_characters": 378,
+        "text_output_characters": 25,
+        "data_terms": []
+      },
+      {
+        "index": 33,
+        "type": "markdown",
+        "source_characters": 378,
+        "text_output_characters": 0,
+        "data_terms": [
+          "samples",
+          "shots"
+        ]
+      },
+      {
+        "index": 34,
+        "type": "code",
+        "source_characters": 301,
+        "text_output_characters": 327,
+        "data_terms": [
+          "samples"
+        ]
+      },
+      {
+        "index": 35,
+        "type": "code",
+        "source_characters": 253,
+        "text_output_characters": 0,
+        "data_terms": []
+      },
+      {
+        "index": 36,
+        "type": "code",
+        "source_characters": 433,
+        "text_output_characters": 36,
+        "data_terms": [
+          "shots"
+        ]
+      }
+    ]
+  }
+]

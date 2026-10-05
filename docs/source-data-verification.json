@@ -1,0 +1,20 @@
+{
+  "source_file_hashes_checked": 38984,
+  "changed_source_files": [],
+  "scoped_file_count": 38984,
+  "scoped_bytes": 3654914049,
+  "main_collections": 265,
+  "legacy_count_collections": 11,
+  "catalog_collections": 276,
+  "gross_observations": 76717469,
+  "qpy_files": 641,
+  "qpy_circuits": 4016,
+  "pickle_circuits": 12,
+  "main_binary_sample_validation_passed": true,
+  "packed_npz_padding_zero": true,
+  "scoped_decode_errors": [],
+  "circuit_parameter_decode_errors": [],
+  "pdf_text_extraction_errors": [],
+  "client_readme_sha256": "72042aab82f0aa0bf970f333b80a2019048c310f9eda97aa641805b4e71c9c48",
+  "excluded_data_records_present": false
+}
