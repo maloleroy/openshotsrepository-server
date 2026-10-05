@@ -6,6 +6,9 @@ Cargo.lock
 *.db
 *.db-*
 
+# Data
+data/
+
 # IDE
 .idea/
 .vscode/
