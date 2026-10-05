@@ -2,6 +2,9 @@
 /target/
 Cargo.lock
 
+# Python audit tools
+__pycache__/
+
 # Database
 *.db
 *.db-*
