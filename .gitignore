@@ -1,6 +1,5 @@
 # Rust
 /target/
-Cargo.lock
 
 # Python audit tools
 __pycache__/

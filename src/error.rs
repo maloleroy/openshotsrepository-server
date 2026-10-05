@@ -1,40 +1,55 @@
 use axum::{
+    Json,
     http::StatusCode,
     response::{IntoResponse, Response},
-    Json,
 };
 use serde_json::json;
-use thiserror::Error;
-
-/// Application error types
-#[derive(Debug, Error)]
+#[derive(Debug, thiserror::Error)]
 pub enum AppError {
-    #[error("Resource not found")]
+    #[error("resource not found")]
     NotFound,
-
-    #[error("Database error: {0}")]
-    Database(#[from] sqlx::Error),
-
-    #[error("JSON error: {0}")]
-    Json(#[from] serde_json::Error),
-
-    #[error("Invalid request: {0}")]
+    #[error("{0}")]
     BadRequest(String),
+    #[error("{0}")]
+    Conflict(String),
+    #[error("{0}")]
+    TooLarge(String),
+    #[error("database error")]
+    Database(#[from] sqlx::Error),
+    #[error("invalid JSON")]
+    Json(#[from] serde_json::Error),
 }
-
+pub fn bad(message: impl Into<String>) -> AppError {
+    AppError::BadRequest(message.into())
+}
 impl IntoResponse for AppError {
     fn into_response(self) -> Response {
-        let (status, message) = match &self {
-            AppError::NotFound => (StatusCode::NOT_FOUND, "Resource not found"),
-            AppError::Database(_) => (StatusCode::INTERNAL_SERVER_ERROR, "Database error"),
-            AppError::Json(_) => (StatusCode::BAD_REQUEST, "Invalid JSON"),
-            AppError::BadRequest(msg) => (StatusCode::BAD_REQUEST, msg.as_str()),
+        let status = match &self {
+            Self::NotFound => StatusCode::NOT_FOUND,
+            Self::BadRequest(_) | Self::Json(_) => StatusCode::BAD_REQUEST,
+            Self::Conflict(_) => StatusCode::CONFLICT,
+            Self::TooLarge(_) => StatusCode::PAYLOAD_TOO_LARGE,
+            Self::Database(e) => {
+                if let Some(e) = e.as_database_error() {
+                    match e.code().as_deref() {
+                        Some("23503") | Some("23514") | Some("22P02") => StatusCode::BAD_REQUEST,
+                        Some("23505") | Some("55000") => StatusCode::CONFLICT,
+                        _ => {
+                            tracing::error!(error=%e,"database failure");
+                            StatusCode::INTERNAL_SERVER_ERROR
+                        }
+                    }
+                } else {
+                    tracing::error!(error=%e,"database failure");
+                    StatusCode::INTERNAL_SERVER_ERROR
+                }
+            }
         };
-
-        let body = Json(json!({
-            "error": message,
-        }));
-
-        (status, body).into_response()
+        let message = if status == StatusCode::INTERNAL_SERVER_ERROR {
+            "internal database error".to_string()
+        } else {
+            self.to_string()
+        };
+        (status, Json(json!({"error":message}))).into_response()
     }
 }

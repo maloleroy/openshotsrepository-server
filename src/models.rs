@@ -1,58 +1,116 @@
+use crate::error::{AppError, bad};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
-use sqlx::FromRow;
-use std::collections::HashMap;
-
-/// Internal shot representation stored in database
-#[derive(Debug, Clone, FromRow)]
-pub struct Shot {
-    pub id: String,
-    pub counts: String, // JSON-encoded counts
-    pub backend: String,
-    pub circuit_hash: String,
-    pub n_qubits: i32,
-    pub timestamp: DateTime<Utc>,
-    pub tags: String, // JSON-encoded tags
+use serde_json::{Value, json};
+use uuid::Uuid;
+fn object() -> Value {
+    json!({})
 }
-
-/// Request body for creating a new shot
-#[derive(Debug, Deserialize)]
-pub struct CreateShotRequest {
-    pub counts: HashMap<String, i64>,
-    pub backend: String,
-    pub circuit_hash: String,
+fn kind() -> String {
+    "hardware_counts".into()
+}
+fn association() -> String {
+    "unknown".into()
+}
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub struct CollectionInput {
+    #[serde(default = "kind")]
+    pub result_kind: String,
     pub n_qubits: i32,
+    pub backend: Option<String>,
+    pub circuit_hash: Option<String>,
+    #[serde(default = "association")]
+    pub circuit_association: String,
+    pub circuit_id: Option<Uuid>,
+    pub problem_id: Option<Uuid>,
+    pub execution_id: Option<Uuid>,
+    pub calibration_id: Option<Uuid>,
+    pub qaoa_p: Option<i32>,
+    pub executed_at: Option<DateTime<Utc>>,
+    pub supersedes_id: Option<Uuid>,
+    #[serde(default = "object")]
+    pub metadata: Value,
     #[serde(default)]
-    pub tags: HashMap<String, serde_json::Value>,
+    pub sources: Vec<SourceLink>,
+    #[serde(default)]
+    pub parents: Vec<Uuid>,
 }
-
-/// API response for a shot
-#[derive(Debug, Serialize)]
-pub struct ShotResponse {
-    pub id: String,
-    pub counts: HashMap<String, i64>,
+#[derive(Clone, Debug, Deserialize, Serialize)]
+pub struct SourceLink {
+    pub source_id: Uuid,
+    #[serde(default = "object")]
+    pub locator: Value,
+}
+impl CollectionInput {
+    pub fn counts(&self) -> bool {
+        self.result_kind.ends_with("_counts")
+    }
+    pub fn validate(&self) -> Result<(), AppError> {
+        if !(1..=256).contains(&self.n_qubits) {
+            return Err(bad("n_qubits must be 1..256 measured bits"));
+        }
+        if ![
+            "hardware_counts",
+            "simulation_counts",
+            "mitigated_counts",
+            "generated_counts",
+            "unknown_counts",
+            "probabilities",
+            "quasi_probabilities",
+            "weighted_samples",
+        ]
+        .contains(&self.result_kind.as_str())
+        {
+            return Err(bad("unknown result_kind"));
+        }
+        if !["confirmed", "inferred", "unknown"].contains(&self.circuit_association.as_str()) {
+            return Err(bad("invalid circuit_association"));
+        }
+        if self.circuit_hash.as_ref().is_some_and(|s| !valid_hash(s)) {
+            return Err(bad("circuit_hash must be lowercase SHA256"));
+        }
+        if self.circuit_association == "confirmed" && self.circuit_hash.is_none() {
+            return Err(bad("confirmed association requires circuit_hash"));
+        }
+        if self.result_kind == "hardware_counts"
+            && self.backend.as_ref().is_none_or(|s| s.is_empty())
+        {
+            return Err(bad("hardware counts require backend"));
+        }
+        if self.qaoa_p.is_some_and(|p| p < 1) || !self.metadata.is_object() {
+            return Err(bad("invalid p or metadata"));
+        }
+        Ok(())
+    }
+}
+pub fn valid_hash(s: &str) -> bool {
+    s.len() == 64
+        && s.bytes()
+            .all(|b| b.is_ascii_digit() || (b'a'..=b'f').contains(&b))
+}
+#[derive(Default, Deserialize)]
+pub struct CollectionQuery {
+    pub backend: Option<String>,
+    pub circuit_hash: Option<String>,
+    pub n_qubits: Option<i32>,
+    pub result_kind: Option<String>,
+    pub circuit_association: Option<String>,
+    pub problem_id: Option<Uuid>,
+    pub calibration_id: Option<Uuid>,
+    pub qaoa_p: Option<i32>,
+    pub executed_after: Option<DateTime<Utc>>,
+    pub executed_before: Option<DateTime<Utc>>,
+    pub cursor: Option<Uuid>,
+    pub limit: Option<i64>,
+}
+#[derive(Deserialize)]
+pub struct CacheInput {
     pub backend: String,
     pub circuit_hash: String,
     pub n_qubits: i32,
-    pub timestamp: DateTime<Utc>,
-    pub tags: HashMap<String, serde_json::Value>,
-}
-
-impl From<Shot> for ShotResponse {
-    fn from(shot: Shot) -> Self {
-        let counts: HashMap<String, i64> =
-            serde_json::from_str(&shot.counts).unwrap_or_default();
-        let tags: HashMap<String, serde_json::Value> =
-            serde_json::from_str(&shot.tags).unwrap_or_default();
-
-        ShotResponse {
-            id: shot.id,
-            counts,
-            backend: shot.backend,
-            circuit_hash: shot.circuit_hash,
-            n_qubits: shot.n_qubits,
-            timestamp: shot.timestamp,
-            tags,
-        }
-    }
+    pub shots: u32,
+    pub executed_after: Option<DateTime<Utc>>,
+    pub executed_before: Option<DateTime<Utc>>,
+    pub calibration_id: Option<Uuid>,
 }
