@@ -11,13 +11,12 @@ from collections import Counter
 import gzip
 import importlib
 import json
-import os
 from pathlib import Path
 import pickle
 import warnings
 
 from qiskit import QuantumCircuit, qpy
-from audit_source_data import EXCLUDED, circuit_record, scalar_summary
+from audit_source_data import circuit_record, scalar_summary, source_files
 
 
 class CircuitUnpickler(pickle.Unpickler):
@@ -56,13 +55,7 @@ def main():
     args = parser.parse_args()
     records = []
     if args.mode == 'parameters':
-        paths = []
-        for base, dirs, names in os.walk(args.root):
-            dirs[:] = sorted(d for d in dirs if d not in EXCLUDED)
-            if Path(base) == args.root / 'data':
-                dirs[:] = [d for d in dirs if d == 'cplex']
-                names = []
-            paths.extend(Path(base) / n for n in sorted(names) if n.endswith('.qpy'))
+        paths = [p for p in source_files(args.root) if p.suffix == '.qpy']
     else:
         paths = [args.root / 'store' / (name + '.pkl') for name in [
             '03bea3382f8006ad','4555b61896d340f5','54cdc3c9e8c1cacd',

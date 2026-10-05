@@ -1,5 +1,6 @@
 {
-  "bytes": 3654914049,
+  "bytes": 2685127059,
+  "data_directory_scope": "data/cplex only; all other data/ content excluded by user",
   "excluded_directory_names": [
     ".git",
     ".mypy_cache",
@@ -10,7 +11,7 @@
     "node_modules",
     "target"
   ],
-  "file_count": 38984,
+  "file_count": 3855,
   "groups": {
     ".DS_Store": {
       "file_count": 1,
@@ -89,13 +90,6 @@
         ".md": 1
       }
     },
-    "backups": {
-      "file_count": 1,
-      "bytes": 540766423,
-      "extensions": {
-        ".gz": 1
-      }
-    },
     "data": {
       "file_count": 3054,
       "bytes": 1324445084,
@@ -135,31 +129,6 @@
         ".tex": 3,
         ".toc": 1,
         "<none>": 4
-      }
-    },
-    "figures": {
-      "file_count": 35122,
-      "bytes": 419102674,
-      "extensions": {
-        ".bin": 2,
-        ".csv": 54,
-        ".dat": 2,
-        ".html": 2,
-        ".json": 11247,
-        ".log": 4433,
-        ".md": 8,
-        ".npz": 10945,
-        ".pdf": 34,
-        ".pkl": 8062,
-        ".png": 111,
-        ".py": 10,
-        ".qpy": 1,
-        ".rs": 1,
-        ".sh": 1,
-        ".stale": 200,
-        ".tex": 1,
-        ".txt": 7,
-        "<none>": 1
       }
     },
     "issues": {
@@ -238,12 +207,12 @@
       }
     },
     "store": {
-      "file_count": 521,
-      "bytes": 855819325,
+      "file_count": 515,
+      "bytes": 845901432,
       "extensions": {
         ".bsb": 58,
         ".csv": 3,
-        ".npz": 161,
+        ".npz": 155,
         ".pkl": 248,
         ".qasm": 21,
         ".qpy": 25,
@@ -268,8 +237,12 @@
   "inspection_errors": [],
   "numpy_version": "2.2.6",
   "qiskit_version": "2.3.0",
-  "qpy_circuit_count": 4016,
-  "qpy_file_count": 641,
+  "qpy_circuit_count": 4012,
+  "qpy_file_count": 640,
   "root": "/media/malo/nixos/home/fluteur/Documents/IBM/clustering-for-qem",
-  "data_directory_scope": "data/cplex only; all other data/ content excluded by user"
+  "excluded_source_subtrees": [
+    "figures",
+    "backups",
+    "store/hex_swaps_mis_shots_bad"
+  ]
 }

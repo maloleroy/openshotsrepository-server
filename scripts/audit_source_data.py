@@ -22,7 +22,6 @@ import pickle
 import pickletools
 import re
 import struct
-import tarfile
 import warnings
 import zipfile
 
@@ -37,9 +36,28 @@ EXCLUDED = {
 
 
 def in_scope(relative):
-    """The user explicitly limited data/ exploration to data/cplex/."""
+    """Apply the user's source/import exclusions before opening files."""
     parts = Path(relative).parts
-    return not parts or parts[0] != "data" or len(parts) > 1 and parts[1] == "cplex"
+    if not parts:
+        return True
+    if parts[0] in {"figures", "backups"}:
+        return False
+    if parts[:2] == ("store", "hex_swaps_mis_shots_bad"):
+        return False
+    return parts[0] != "data" or len(parts) > 1 and parts[1] == "cplex"
+
+
+def source_files(root):
+    """Walk authorized source directories without traversing excluded trees."""
+    for base, dirs, names in os.walk(root):
+        relative_base = Path(base).relative_to(root)
+        dirs[:] = sorted(d for d in dirs if d not in EXCLUDED and (
+            relative_base / d == Path("data") or in_scope(relative_base / d)
+        ))
+        for name in sorted(names):
+            path = Path(base) / name
+            if in_scope(path.relative_to(root)):
+                yield path
 
 
 class Opaque:
@@ -320,11 +338,6 @@ def inspect_file(path, relative):
         lines = path.read_text().splitlines()
         return {"headers": [s for s in lines if s.startswith("p ")],
                 "edge_lines": sum(s.startswith("e ") for s in lines)}
-    if str(relative).startswith("backups/") and str(path).endswith(".tar.gz"):
-        with tarfile.open(path, "r|gz") as archive:
-            members = [{"path": m.name, "bytes": m.size, "type": m.type.decode("ascii")}
-                       for m in archive]
-        return {"members": members, "payload_checked": False}
     return None
 
 
@@ -336,29 +349,23 @@ def main():
     root = args.root.resolve()
     files = []
     errors = []
-    for base, dirs, names in os.walk(root):
-        dirs[:] = sorted(d for d in dirs if d not in EXCLUDED)
-        if Path(base) == root / "data":
-            dirs[:] = [d for d in dirs if d == "cplex"]
-            names = []
-        for name in sorted(names):
-            path = Path(base) / name
-            relative = path.relative_to(root)
-            record = {"path": str(relative), "bytes": path.stat().st_size,
-                      "extension": path.suffix.lower() or "<none>"}
-            with path.open("rb") as stream:
-                record["sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
-            try:
-                inspected = inspect_file(path, relative)
-                if inspected is not None:
-                    record["inspection"] = inspected
-            except Exception as error:
-                # A census must report every failed artifact and continue.
-                record["inspection_error"] = f"{type(error).__name__}: {error}"
-                errors.append({"path": str(relative), "error": record["inspection_error"]})
-            files.append(record)
-            if len(files) % 2000 == 0:
-                print(f"Inspected {len(files)} files; {len(errors)} errors", flush=True)
+    for path in source_files(root):
+        relative = path.relative_to(root)
+        record = {"path": str(relative), "bytes": path.stat().st_size,
+                  "extension": path.suffix.lower() or "<none>"}
+        with path.open("rb") as stream:
+            record["sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
+        try:
+            inspected = inspect_file(path, relative)
+            if inspected is not None:
+                record["inspection"] = inspected
+        except Exception as error:
+            # A census must report every failed artifact and continue.
+            record["inspection_error"] = f"{type(error).__name__}: {error}"
+            errors.append({"path": str(relative), "error": record["inspection_error"]})
+        files.append(record)
+        if len(files) % 2000 == 0:
+            print(f"Inspected {len(files)} files; {len(errors)} errors", flush=True)
     groups = {}
     for group in sorted({Path(f["path"]).parts[0] for f in files}):
         subset = [f for f in files if Path(f["path"]).parts[0] == group]
@@ -366,6 +373,7 @@ def main():
                          "extensions": dict(sorted(Counter(f["extension"] for f in subset).items()))}
     summary = {"root": str(root), "excluded_directory_names": sorted(EXCLUDED),
                "data_directory_scope": "data/cplex only; all other data/ content excluded by user",
+               "excluded_source_subtrees": ["figures", "backups", "store/hex_swaps_mis_shots_bad"],
                "numpy_version": np.__version__, "qiskit_version": qiskit.__version__,
                "file_count": len(files), "bytes": sum(f["bytes"] for f in files),
                "groups": groups, "inspection_errors": errors,

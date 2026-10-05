@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Supplement the source census with sample statistics and backup versions.
+"""Supplement the scoped source census with observed sample statistics.
 
 Uses the source project's existing NumPy environment. Writes only to the output
-directory and temporary files. Pickle inspection uses symbolic class stand-ins.
+directory. Excludes figures/, backups/ and store/hex_swaps_mis_shots_bad/.
 """
 
 import argparse
@@ -12,12 +12,10 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
-import tarfile
-import tempfile
 
 import numpy as np
 
-from audit_source_data import in_scope, inspect_file, scalar_summary
+from audit_source_data import scalar_summary, source_files
 
 
 def sample_stats(array):
@@ -31,7 +29,8 @@ def sample_stats(array):
 
 def scan_samples(root):
     records = []
-    for path in sorted((root / "store").rglob("*.npz")):
+    store_files = [p for p in source_files(root) if p.relative_to(root).parts[0] == "store"]
+    for path in sorted(p for p in store_files if p.suffix == ".npz"):
         with np.load(path, allow_pickle=False) as archive:
             for key in archive.files:
                 array = archive[key]
@@ -53,7 +52,7 @@ def scan_samples(root):
     spec = importlib.util.spec_from_file_location("source_bitstring_utils", module_path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    for path in sorted((root / "store").rglob("*.bsb")):
+    for path in sorted(p for p in store_files if p.suffix == ".bsb"):
         strings = module.load_bsb(path)
         counts = Counter(strings)
         records.append({"path": str(path.relative_to(root)), "key": None, "index": None,
@@ -64,46 +63,6 @@ def scan_samples(root):
     return records
 
 
-def scan_backups(root):
-    backups = []
-    for path in sorted((root / "backups").glob("*.tar.gz")):
-        records = []
-        with tempfile.TemporaryDirectory(prefix="osr-backup-audit-") as temporary:
-            with tarfile.open(path, "r|gz") as archive:
-                for member in archive:
-                    if not member.isfile():
-                        continue
-                    relative = Path(member.name)
-                    if not in_scope(relative):
-                        continue
-                    stream = archive.extractfile(member)
-                    data = stream.read()
-                    digest = hashlib.sha256(data).hexdigest()
-                    current = root / relative
-                    identical = False
-                    if current.is_file():
-                        with current.open("rb") as live:
-                            identical = hashlib.file_digest(live, "sha256").hexdigest() == digest
-                    record = {"path": member.name, "bytes": member.size, "sha256": digest,
-                              "current_path_exists": current.is_file(), "identical_to_current": identical}
-                    if relative.name.startswith("._"):
-                        record["kind"] = "appledouble_metadata"
-                    elif not identical:
-                        # Use a generated temporary filename; never extract archive paths.
-                        staged = Path(temporary) / ("artifact" + relative.suffix)
-                        staged.write_bytes(data)
-                        try:
-                            record["inspection"] = inspect_file(staged, relative)
-                        except Exception as error:
-                            record["inspection_error"] = f"{type(error).__name__}: {error}"
-                        staged.unlink()
-                    records.append(record)
-                    if len(records) % 250 == 0:
-                        print(f"Backup: {len(records)} files", flush=True)
-        backups.append({"path": str(path.relative_to(root)), "files": records})
-    return backups
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", type=Path)
@@ -111,11 +70,10 @@ def main():
     args = parser.parse_args()
     root = args.root.resolve()
     samples = scan_samples(root)
-    backups = scan_backups(root)
-    result = {"samples": samples, "backups": backups}
+    result = {"samples": samples}
     with gzip.GzipFile(str(args.output), "wb", mtime=0) as stream:
         stream.write(json.dumps(result, default=scalar_summary, sort_keys=True, separators=(",", ":")).encode())
-    print(json.dumps({"sample_collections": len(samples), "backup_files": sum(len(b["files"]) for b in backups)}))
+    print(json.dumps({"sample_collections": len(samples), "gross_observations": sum(r["shots"] for r in samples)}))
 
 
 if __name__ == "__main__":

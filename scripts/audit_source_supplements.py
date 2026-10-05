@@ -113,7 +113,7 @@ def main():
     inventory_path = out / 'source-data-inventory.json.gz'
     inventory = json.loads(gzip.decompress(inventory_path.read_bytes()))
     if any(not in_scope(f['path']) for f in inventory['files']):
-        raise ValueError('Census includes data/ content outside the authorized data/cplex scope')
+        raise ValueError('Census contains content outside the authorized source scope')
     auxiliary = []
     for f in inventory['files']:
         path, relative = root / f['path'], Path(f['path'])
@@ -147,12 +147,6 @@ def main():
     write_json(inventory_path, inventory)
     payload_path = out / 'source-data-payloads.json.gz'
     payloads = json.loads(gzip.decompress(payload_path.read_bytes()))
-    for backup in payloads['backups']:
-        for f in backup['files']:
-            if Path(f['path']).name.startswith('._'):
-                f['kind'] = 'appledouble_metadata'
-                f.pop('inspection_error', None)
-                f.pop('inspection', None)
     write_json(payload_path, payloads)
     write_json(out / 'source-data-notebooks.json', notebook_records(root, inventory['files']))
     documents = document_records(root, inventory['files'])

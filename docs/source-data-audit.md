@@ -6,7 +6,7 @@ Audit date: 2026-10-06. This completes item 1 (exploration). Database design, mi
 
 Source root: `/media/malo/nixos/home/fluteur/Documents/IBM/clustering-for-qem`.
 
-**Only `data/cplex/` is in scope inside `data/`. Every other `data/` directory is excluded, including `qopt-best-practices`.** The audit includes `store/`, `figures/`, `notebooks/`, backups, documentation, source code and tests. Initial import will cover result collections and their related artifacts, rather than every standalone problem or circuit definition.
+**Only `data/cplex/` is in scope inside `data/`. Every other `data/` directory is excluded, including `qopt-best-practices`.** The audit includes the retained `store/` data, `notebooks/`, documentation, source code and tests. **`figures/`, `backups/`, and `store/hex_swaps_mis_shots_bad/` are excluded from the current audit/import scope**, including clustering outputs, `calibration.json` and `snapshot.json` artifacts in `figures/`. Initial import will cover result collections and their related artifacts, rather than every standalone problem or circuit definition.
 
 Decisions supplied by the user:
 
@@ -18,6 +18,8 @@ Decisions supplied by the user:
 - Collections are immutable. Corrections produce new versions.
 - Use UUIDv4 for unique IDs in the redesign.
 - Preserve the Python client's README and high-level API.
+- Automatic sampler cache hits use raw hardware counts from the requested backend only. They may combine historical runs of the same bound circuit; date/calibration filters are optional, and each run retains its provenance.
+- Bound circuit artifacts are authoritative for gate parameters. Do not require a separate copy of their numeric parameter values; retain searchable QAOA p metadata.
 - Main acquisition job IDs are unavailable. Job ID remains a valid optional field.
 - For June ring-with-swaps shots, `notebooks/layouts.json["store/ring_swaps"]` is authoritative. The user's shorthand `"ring_swaps"` refers to this actual key.
 
@@ -25,30 +27,27 @@ Source commit: `b5dc41871609aa29f9311dc6c45e4d494b22fa71`, with existing local m
 
 ## Coverage and evidence
 
-The scoped census contains **38,984 files, 3,654,914,049 bytes**. Each file has a relative path, size and SHA-256. Git internals, virtual environments, Rust build output, dependency trees and Python/tool caches are excluded. File counts include generated analysis artifacts and copies; they do not represent independent experiments.
+The scoped census contains **3,855 files, 2,685,127,059 bytes**. Each file has a relative path, size and SHA-256. Git internals, virtual environments, Rust build output, dependency trees and Python/tool caches are excluded. File counts include generated analysis artifacts and copies; they do not represent independent experiments.
 
 | Area | Files | What it contains |
 | --- | ---: | --- |
-| `store/` | 521 | Main sample files, legacy stage caches, graph pickles, partial historical calibration, circuit archives |
+| `store/` | 515 | Main sample files, legacy stage caches, graph pickles, partial historical calibration, circuit archives |
 | `data/cplex/` | 3,054 | Graph definitions, solver inputs/models/output, solution pools, circuit archives and seed/depth catalogs |
-| `figures/` | 35,122 | Clustering outputs, generated samples, correlations, metrics, summaries, graph recovery versions and recent calibration/circuit artifacts |
 | `notebooks/` | 13 | Ten notebooks, ordered layouts, standalone documentation and a duplicate sample file |
-| `backups/` | 1 | Historical archive, inspected as a stream without extracting its paths |
 | Other scoped files | 273 | Code, tests, documentation, settings and repository files |
 
 Inspection covered:
 
-- **11,107 NPZ files:** every array header, key, shape, dtype and object-dtype flag. All main sample payloads were decompressed and checked; derived array headers were inspected without pretending to validate every derived numerical value.
-- **12,266 JSON files:** complete parse and recursive field/type paths, plus graph and calibration summaries where applicable.
-- **641 QPY files, 4,016 circuits:** decoded with Qiskit 2.3.0. Circuit width, classical width, register names, active wires, measurements, depth, two-qubit depth, operations, gate pairs, parameters, metadata and layouts were inspected. No scoped QPY inspection failures remain.
-- **8,411 pickle files:** opcode/global inspection and structural decoding using inert replacements for source classes. Six known Qiskit circuit caches were additionally decoded with packaged Qiskit classes, yielding twelve circuits. Source-project class code was not executed by unpickling. Credential fields in summaries are redacted.
+- **156 NPZ files:** every array header, key, shape, dtype and object-dtype flag. All retained main sample payloads were decompressed and checked; the standalone notebook NPZ is a duplicate.
+- **1,019 JSON files:** complete parse and recursive field/type paths, plus graph and calibration summaries where applicable.
+- **640 QPY files, 4,012 circuits:** decoded with Qiskit 2.3.0. Circuit width, classical width, register names, active wires, measurements, depth, two-qubit depth, operations, gate pairs, parameters, metadata and layouts were inspected. No scoped QPY inspection failures remain.
+- **349 pickle files:** opcode/global inspection and structural decoding using inert replacements for source classes. Six known Qiskit circuit caches were additionally decoded with packaged Qiskit classes, yielding twelve circuits. Source-project class code was not executed by unpickling. Credential fields in summaries are redacted.
 - **58 BSB files:** headers and complete decoded sample strings, including multiplicities.
-- **57 CSV files:** headers and dimensions; the three root cache CSVs are explicitly headerless.
+- **Three CSV files:** the root cache lineage/timing/patch files are explicitly headerless.
 - **21 QASM files:** source, register declarations and measurement counts.
-- **603 CPLEX `.dat` inputs, four `.mod` models and 702 `.txt` outputs:** source/parser tracing and text/assignment-field inspection. Two additional current `.dat` graph artifacts and 200 `.stale` recovery files are also cataloged.
+- **603 CPLEX `.dat` inputs, four `.mod` models and 702 `.txt` outputs:** source/parser tracing and text/assignment-field inspection.
 - **Ten notebooks:** all cell sources and textual outputs searched, with cell indices retained for navigation.
-- **43 presentations and 46 PDFs:** slide text and PDF text extraction. The presentations contain 42 embedded workbooks, representing four unique files: small illustrative chart series and placeholder labels, with no acquisition records. Images and plot assets are inventoried and hashed; their pixels are not treated as machine-readable acquisition metadata.
-- **7,039 regular backup members:** payload hashes compared with current files. Historical content differences were inspected separately from macOS metadata forks.
+- **43 presentations and twelve PDFs:** slide text and PDF text extraction. The presentations contain 42 embedded workbooks, representing four unique files: small illustrative chart series and placeholder labels, with no acquisition records. Images and plot assets are inventoried and hashed; their pixels are not treated as machine-readable acquisition metadata.
 
 ### Audit artifacts
 
@@ -56,11 +55,10 @@ Inspection covered:
 | --- | --- |
 | [source-data-summary.json](source-data-summary.json) | Scoped census totals and decoder versions |
 | [source-data-inventory.json.gz](source-data-inventory.json.gz) | Full file manifest and format inspections |
-| [source-shot-catalog.csv](source-shot-catalog.csv) | 276 main/legacy observed-count collections, with per-collection statistics |
-| [source-data-payloads.json.gz](source-data-payloads.json.gz) | Main sample statistics and backup member/version evidence |
+| [source-shot-catalog.csv](source-shot-catalog.csv) | 270 main/legacy observed-count collections, with per-collection statistics |
+| [source-data-payloads.json.gz](source-data-payloads.json.gz) | Main sample statistics |
 | [source-data-legacy-counts.json](source-data-legacy-counts.json) | Eleven legacy execution histograms and their noise factors |
 | [source-data-pickle-circuits.json](source-data-pickle-circuits.json) | Twelve circuits contained in six legacy caches |
-| [source-circuit-parameters.json.gz](source-circuit-parameters.json.gz) | Parameter value vectors grouped by operation and multiplicity for every scoped QPY circuit |
 | [source-data-auxiliary.json.gz](source-data-auxiliary.json.gz) | Solver artifact fields and historical graph recovery files |
 | [source-data-notebooks.json](source-data-notebooks.json) | Notebook cell indices and data-related terms |
 | [source-data-documents.json](source-data-documents.json) | Document and embedded-file inventory |
@@ -78,13 +76,13 @@ The inventories summarize evidence and retain source hashes. They do not copy al
 | Problem graph and type | Matrix JSON, NetworkX caches, loader/settings and solver models | Type/seed often comes from path or code |
 | Problem solutions | Solver pools with objectives, forbidden/reference strings, ring solutions, peaked targets and legacy caches | Candidate status and optimality evidence differ |
 | Layout and used qubits | Ordered catalog mappings, HERO_PATCH, circuit measurement/layout records | December peaked acquisition layout is missing |
-| Readout/gate error rates | Two historical partial pickles and three recent full snapshots | Most acquisition-time full snapshots are missing |
+| Readout/gate error rates | Two historical partial calibration pickles | Acquisition-time full snapshots are unavailable in the retained sources |
 | Circuit parameters and p | Bound gate values, loader/master ordering and cached settings | Historical optimizer/binding settings are not uniformly retained |
 | Backend, execution options and time | Filenames, settings and some circuit/provenance artifacts | Exact submission/execution metadata and main job IDs are unavailable |
 
 ## Main observed samples
 
-There are **207 collections in 161 `store/` NPZ files**, plus **58 BSB collections**: **265 collections with 76,466,445 observations**. Eleven legacy execution histograms add 251,024 observations, producing **276 collections and 76,717,469 gross observations**.
+There are **201 collections in 155 `store/` NPZ files**, plus **58 BSB collections**: **259 collections with 74,952,850 observations**. Eleven legacy execution histograms add 251,024 observations, producing **270 collections and 75,203,874 gross observations**.
 
 These are gross source totals. Copies, overlapping BSB subsets, repeated executions and reused samples must be resolved through provenance before reporting a unique-acquisition total. The standalone notebook NPZ is an exact copy of the March 5 ring sample file and is excluded from these collection totals.
 
@@ -97,7 +95,6 @@ These are gross source totals. Copies, overlapping BSB subsets, repeated executi
 | `hex_shots` | 19 | 49 | 1,260,106 | May 22: ten seeds at p=1 and seed 1 at p=2…10 |
 | `hex_swaps_shots` | 14 | 49 | 1,441,187 | Ten graphs at p=1; August 6 single graph at p=1…4 |
 | `hex_swaps_mis_shots` | 12 | 49 | 3,009,320 | June 17 MIS, two acquisitions at each p=1…6 |
-| `hex_swaps_mis_shots_bad` | 6 | 49 | 1,513,595 | Earlier June 12 MIS variant, stored separately as bad data |
 | `ring_swaps` | 100 | 100 | 12,514,740 | June 28: twenty graph seeds, five depths each |
 | `peaked_hard` | 58 | 49 | 11,471,577 | Packed string files with CZ/target/sample labels |
 | Root legacy execution caches | 11 | 4 or 52 | 251,024 | Integer count histograms, some with noise factors 1/3/5/7 |
@@ -128,7 +125,7 @@ The central association sources are `src/benchmark/notebook.py`, `rust/cli.py`, 
 - **April CPLEX:** loader maps the three files to p=1,2,3, despite filenames mentioning `p1to5_5circuits`. Problem/solutions are `data/cplex/maxcut/{graph.json,pool_solutions.json}`. `store/cplex_circuits/` has p1…10, p1…6, p1…5 without SABRE, and p1-only archives. Selecting the actual submitted version requires evidence beyond a compatible p.
 - **Heavy hex:** `hex_circuits_run{i}` maps to seed `i+1`, p=1. `hex_seed1_p1to10_run{i}` maps to p=`i+1`. Graphs and per-seed circuits are in `data/cplex/maxcut/hex/{seed}/`; `hex_circuits.qpy` is the ten-circuit master. Ordered physical mapping is `HERO_PATCH` from `src/circuits/topology/hero.py`.
 - **Hex with swaps, MaxCut:** the ten-graph master uses seeds `[2,4,5,8,13,16,19,22,24,26]`. For the August single-graph files, index `i` maps to p=`i+1`, with graph `data/cplex/maxcut/hex_swaps/2/graph.json`. The directory has both master and per-seed circuit archives; circuit-version identity must survive import. `HERO_PATCH` is the analysis layout.
-- **Hex with swaps, MIS:** graph `data/cplex/mis/hex_swaps/1/graph.json`, per-instance six-circuit archive. Files with indices `i` and `i+6` are concatenated by the loader for each p=`i+1`, i=0…5. Retain the two source acquisitions even if presenting aggregate counts. The earlier bad-sign/variant family is separately stored; its status must remain visible.
+- **Hex with swaps, MIS:** graph `data/cplex/mis/hex_swaps/1/graph.json`, per-instance six-circuit archive. Files with indices `i` and `i+6` are concatenated by the loader for each p=`i+1`, i=0…5. Retain the two source acquisitions even if presenting aggregate counts. The earlier bad family is excluded by user instruction.
 - **Ring with swaps:** file index `i` maps to seed `1+i//5`, p=`1+i%5`. Twenty measured seeds link to `data/cplex/maxcut/ring_swaps/{seed}/graph.json`; five circuits per seed. The 100-circuit master agrees with the corresponding local per-seed circuits in the existing integrity audit. Graphs have 100 nodes, 200 edges and signed weights. The authoritative acquisition layout is the user-confirmed `layouts.json["store/ring_swaps"]`.
 
 ### Layout evidence and limitations
@@ -137,9 +134,8 @@ The central association sources are `src/benchmark/notebook.py`, `rust/cli.py`, 
 
 The compiler's utility-scale ring mapping and the catalog's ring-with-swaps mapping overlap on only 67 of 100 physical qubits. The user's confirmation resolves which layout to attach to the June acquisition. Keep the compiler artifact's own mapping/provenance when it differs; do not overwrite it to imply that the archive independently proves the submitted physical mapping.
 
-Circuit wire count, measured width, active physical wires and backend capacity are distinct. For example, many QPY files have 156 quantum wires and 49 measured bits. Measured classical widths across the scoped QPY corpus are 9,24,49,50,56,100. Measurement `(quantum wire, classical bit)` pairs and initial/final layouts are available in the inventory. Logical graph numbering must be linked through these mappings.
+Circuit wire count, measured width, active physical wires and backend capacity are distinct. For example, many QPY files have 156 quantum wires and 49 measured bits. Measured classical widths across the scoped QPY corpus are 9,24,49,50,100. Measurement `(quantum wire, classical bit)` pairs and initial/final layouts are available in the inventory. Logical graph numbering must be linked through these mappings.
 
-Four recent 56-bit circuits in `figures/hero_patch_selection/` explicitly contain `physical_qubits`, `logical_qubits` and `patch_calibration` metadata. Their full circuit width is 156; p=1…4 circuits have no observed shots identified here. These metadata-rich recent artifacts should not be confused with older acquisitions.
 
 ## Bit order is an explicit part of the source data
 
@@ -161,7 +157,7 @@ Consequently, a single blanket `int(bitstring, 2)` applied to every format would
 
 ### Graphs and solver data
 
-There are **605 matrix graph JSON documents** across scoped artifacts: 603 CPLEX graphs and two recent graph artifacts. Their fields include `n`, `weights`, `edge_prob`, `n_forbidden`, `forbidden`, commonly `weight_min`/`weight_max`, and for some regular graphs `hero_mapping`/`sat_min_k`. Recent graphs additionally include physical patch/calibration/swap-layer metadata.
+There are **603 matrix graph JSON documents** in the scoped CPLEX data. Their fields include `n`, `weights`, `edge_prob`, `n_forbidden`, `forbidden`, commonly `weight_min`/`weight_max`, and for some regular graphs `hero_mapping`/`sat_min_k`.
 
 Weights can be signed; zero denotes an absent edge in the current reader. Graphs use explicit logical vertex indices. Preserve n even if some vertices are isolated. Upper-triangle and symmetric matrix conventions cannot be discarded without checking the source; `load_edges` reads the upper triangle.
 
@@ -173,9 +169,11 @@ NetworkX graph pickles also contain node/edge/graph attributes. Legacy problem c
 
 ### QAOA and compilation evidence
 
-All 4,016 scoped QPY circuits have bound parameters (`circuit.parameters` is empty). Their numeric gate parameters remain present. The parameter supplement records value vectors by operation and multiplicity; original instruction order and exact serialization remain in the source QPY file identified by its hash. Bound RX/RZ angles alone should not be labeled as gamma/beta without the generator's binding convention.
+All 4,012 retained QPY circuits have bound parameters (`circuit.parameters` is empty), with numerical gate parameters embedded in their operations. The original circuit artifact and its hash preserve those values and their instruction order. A separate authoritative parameter-value table is unnecessary for these circuits.
 
-Compiler code obtains `optimized_qaoa_angles` from the trainer and binds them with `assign_parameters`. The current TQA schedule has a default timestep and a deterministic grid, but recomputing the current generator does not prove a historical acquisition used those defaults. p can be recovered from explicit loader/master ordering as documented above; CZ count or circuit depth is not interchangeable with p.
+This is confirmed directly by `src/circuits/compiler.py`: the compiler obtains `optimized_qaoa_angles`, calls `assign_parameters(params)` on the selected circuit, and exports that bound circuit using `qpy.dump`. `notebooks/Best_circuits.ipynb`, cells 24, 26 and 29, invokes the compiler, reads per-seed QPY files and packages the selected bound circuits. Cell 29 writes parallel seed and p catalogs.
+
+Keep p as searchable experiment/circuit metadata from those catalogs and the loader mappings. Bound RX/RZ gate angles are not automatically named gamma/beta values because compilation may transform them. Historical optimizer settings are not uniformly retained. Recomputing current trainer defaults does not establish historical parameter provenance. The separately exported numeric-parameter audit file has been removed; the circuits remain the source of truth.
 
 Other relevant fields present in source/settings/artifacts include circuit name/version, global phase, gate set, transpilation seed/optimization options, SWAP strategy/layers, topology, SAT mapping, graph seed, noise factors, folding and Pauli twirling settings. Their presence varies by family.
 
@@ -190,37 +188,13 @@ MIS penalty defaults differ by code path (6 in compiler/operator helpers and 8 i
 
 These filenames provide date labels, not exact execution timestamps. Their correspondence to every subsequent Boston acquisition is not established.
 
-### Complete recent snapshots
+### Missing historical evidence
 
-| Snapshot | Backend | Qubits | Gate records | Backend properties update time |
-| --- | --- | ---: | ---: | --- |
-| `figures/calibration/ibm_boston_20261004T171225Z/snapshot.json` | ibm_boston | 156 | 2,576 | 2026-10-04T16:39:37Z |
-| `figures/hero_patch_selection/calibration.json` | ibm_boston | 156 | 2,576 | 2026-10-04T21:35:07Z |
-| `figures/hero_patch_selection/calibration/ibm_boston_20261004T215216Z/snapshot.json` | ibm_boston | 156 | 2,576 | 2026-10-04T21:35:07Z |
+The calibration JSON/snapshot artifacts in `figures/` are excluded. No complete contemporaneous backend calibration snapshot is available among the retained sources. `common_settings` selects a Marrakesh backend model and reuses March readout data for analysis. Those are analysis assumptions, rather than evidence of the hardware configuration at acquisition. The optional `error_rates.json` path supported by settings has no corresponding file in the retained census.
 
-Snapshot fields include source, retrieval time, region, properties and configuration. Configuration includes backend identity/version, coupling map, basis gates and capacities.
+The future service should still support supplied calibration records with physical qubits, gate/qubit property names, values, units and individual property times. Current imports must leave unavailable fields unknown. Including all result types remains a service capability requirement; it does not authorize importing the excluded analysis outputs.
 
-Qubit properties include T1, T2, initialization error, both asymmetric readout probabilities, readout error and readout length. Individual property records contain `name`, `value`, `date`, `unit`. Gate records retain gate/name, ordered physical qubits and parameter records for gate error, gate length and threshold. Gates include CZ, RX/RZ/RZZ/SX/X, identity, measurement/reset variants and Xslow. Units and individual property dates must remain attached to values.
-
-`device_rates.py` exports reduced CSV views and derived usability/patch costs. Direction/orientation matters; selecting the worse orientation and excluding sentinel unusable errors are analysis choices. Patch cost uses negative-log combinations of selected readout/CZ rates and is not measured circuit fidelity.
-
-**Execution-time full calibration is unavailable for most older sample collections.** These October snapshots cannot be assigned as contemporaneous calibration for 2025 or earlier-2026 runs. `common_settings` selects a Marrakesh backend model and reuses March readout data for analysis. Those are analysis assumptions, not proof of the hardware configuration at acquisition. The optional `error_rates.json` path supported by settings has no corresponding file in the scoped census.
-
-## Derived results and legacy caches
-
-### Analysis artifacts under `figures/`
-
-The corpus includes substantially more than raw shot data:
-
-- Clustering centroids: 8,062 NPZ files with `centroids: uint64[N,4]`, `weights: uint64[N]`, `qubits: uint16`; another 2,625 add floating `trace_objectives`. Centroid weights are assigned cluster mass. A generated centroid's weight is not evidence that the hardware observed that bitstring that many times.
-- 157 correlation cache NPZ files, with Pearson, Spearman, mutual-information and recovered absolute-correlation matrices, alongside width/shot metadata.
-- Score/objective/optimum arrays, propagation/restart/random-control outputs, representations and two binary kernel benchmark assets. Shapes/dtypes/keys are in the manifest.
-- Generated sample JSON, raw/random objective histograms and saved algorithm outputs. Multiplicity of algorithm-produced samples has a different meaning from acquisition counts.
-- Manifests linking instance/p/source path/key/index/packed flags to runs, seeds, shot subsampling, objective edges and hardware edges.
-- Summaries and CSV tables containing clustering settings, k, distances, majority/propagation strategy, radius, maximum iterations, annealing/temperature/cooling, penalties, timings, objective/solution-distance metrics and fitted settings. Some circuit feature tables use family/p fallbacks; those rows are not proof of an exact submitted circuit match.
-- Recovery and integrity reports, including the ring-with-swaps mapping discrepancy and graph-version corrections.
-
-Floating distribution values and algorithm weights need their own semantics. They must not be silently rounded into hardware occurrence counts. The requested future support for probabilities/quasi-probabilities remains a requirement even where no original shot total is recoverable.
+## Legacy caches and derived result support
 
 ### Legacy root cache
 
@@ -236,22 +210,16 @@ Other caches contain weighted clusters, centroids/member sets, discovered soluti
 
 ## Copies, historical versions and missing evidence
 
-The archive `backup_20260727_160555.tar.gz` contains 7,039 regular files:
+The standalone notebook NPZ is byte-identical to the retained March 5 ring sample file. Its separate path provides provenance, not a second independent acquisition. BSB subsets may overlap. Matching histograms alone do not prove that two files come from the same execution.
 
-- 3,829 AppleDouble `._...` metadata forks;
-- 3,008 actual files byte-identical to current files;
-- 202 actual files with different content: one hundred hex-with-swaps graph JSON files, their one hundred `.dat` inputs, and the root index/time CSVs.
-
-No actual backup-only data files were identified. The archive name predates some contained file labels, so its filename must not establish acquisition chronology. Historical graph versions need their archive/member hash, rather than silently replacing current graph identity.
-
-`figures/data_recovery_backup_20260825/` contains another 200 `.stale` graph/solver-input files. They document previous graph versions. Importing current graphs against historical circuits without checking these versions could attach the wrong optimization problem to shots.
+Backups and graph-recovery artifacts under `figures/` are excluded. Use retained current graph/circuit artifacts and record uncertain acquisition associations explicitly; excluded archive versions must not be imported or used as replacement graph records.
 
 Remaining uncertainties:
 
 1. **December peaked acquisition layout**, and explicit acquisition-level confirmation for the October 30/31 layout. Current notebook analysis uses the October 29 mapping; the benchmark loader has no December entry.
 2. **Exact submitted circuit version** for some families, particularly the April CPLEX variants and peaked QASM associations. Compatible graph/p/depth does not establish submission identity.
 3. **Exact execution timestamps, Runtime job IDs and submitted execution options** for main `store/` acquisitions. Filenames retain labels and dates; the user confirmed job IDs are unavailable.
-4. **Contemporaneous full calibration** for older runs. Keep missing values unknown; retain partial snapshots and later analysis proxies with their own dates.
+4. **Contemporaneous full calibration** for older runs. Keep missing values unknown and retain the two historical partial calibration artifacts with their date labels.
 5. **Incomplete legacy lineage and overlapping/copy relationships.** Identical bytes establish an artifact copy; matching histograms alone do not prove the same execution.
 
 These gaps do not prevent designing a schema with optional metadata and explicit provenance. They do prevent filling those metadata fields with unsupported historical claims.
@@ -270,9 +238,8 @@ Run from the OSR server checkout. The source project already supplies NumPy/Qisk
 SOURCE_ROOT=/media/malo/nixos/home/fluteur/Documents/IBM/clustering-for-qem
 uv run --no-sync --project "$SOURCE_ROOT" python scripts/audit_source_data.py "$SOURCE_ROOT" docs/source-data
 uv run --no-sync --project "$SOURCE_ROOT" python scripts/audit_source_payloads.py "$SOURCE_ROOT" docs/source-data-payloads.json.gz
-uv run --no-sync --project "$SOURCE_ROOT" python scripts/audit_source_circuits.py parameters "$SOURCE_ROOT" docs/source-circuit-parameters.json.gz
 uv run --no-sync --project "$SOURCE_ROOT" python scripts/audit_source_circuits.py pickles "$SOURCE_ROOT" docs/source-data-pickle-circuits.json
 uv run --no-sync --project "$SOURCE_ROOT" python scripts/audit_source_supplements.py "$SOURCE_ROOT" docs
 ```
 
-The scanners explicitly prune `data/` to `data/cplex/`. They write only OSR audit outputs and generated temporary files. They do not import data into OSR. Source changes after this audit will naturally change the manifest and totals.
+The scanners explicitly prune `data/` to `data/cplex/` and exclude `figures/`, `backups/`, and `store/hex_swaps_mis_shots_bad/`. They write only OSR audit outputs and generated temporary files. They do not import data into OSR. Source changes after this audit will naturally change the manifest and totals.
