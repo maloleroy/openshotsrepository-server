@@ -1,0 +1,4 @@
+# Replace the hostname, then install this in /etc/caddy/Caddyfile.
+shots.example.org {
+    reverse_proxy 127.0.0.1:8000
+}

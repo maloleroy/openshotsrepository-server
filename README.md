@@ -1,66 +1,34 @@
-# Open Shots Repository Server
+# Open Shots Repository server
 
-REST API server for the Open Shots Repository - a shared dynamic database of quantum computing circuit shots.
+Rust/Axum service for public quantum-computing results, backed by PostgreSQL. Results are immutable; corrections create new versions. Resource IDs are UUIDv4.
 
-## Tech Stack
+OSR stores counts for up to 256 measured bits using `[u64; 4]` states and `u32` occurrences. Large collections use sorted binary blocks instead of JSON histograms. Circuits, problem graphs and solutions, execution details, layouts, calibration and source provenance have separate linked records. Hardware, simulations and derived distributions are labeled explicitly.
 
-- **Rust** with **Axum** web framework for high performance
-- **SQLite** for portable, zero-config database storage
-- **SQLx** for compile-time checked SQL queries
-
-## Quick Start
+## Run
 
 ```bash
-# Build and run
-cargo run
-
-# Run with custom settings
-DATABASE_URL=sqlite:custom.db?mode=rwc OSR_BIND_ADDR=127.0.0.1:3000 cargo run
+# Start PostgreSQL using compose.yaml, after configuring .env (see docs/deployment.md).
+DATABASE_URL=postgres://osr:password@127.0.0.1:5432/osr cargo run --locked
 ```
 
-## API Endpoints
+The server defaults to `127.0.0.1:8000`, runs PostgreSQL migrations and shuts down gracefully. No login, API key or rate limiter is introduced. The old SQLite file is preserved as migration input.
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/health` | Health check |
-| GET | `/shots` | List shots (with filters) |
-| POST | `/shots` | Create a new shot |
-| GET | `/shots/{id}` | Get a specific shot |
-| DELETE | `/shots/{id}` | Delete a shot |
+## Documentation
 
-### Query Parameters for `/shots`
+- [Database design and binary encoding](docs/database-design.md)
+- [HTTP API](docs/api.md)
+- [Deployment, backups and tests](docs/deployment.md)
+- [Scoped source audit](docs/source-data-audit.md)
+- [Import and SQLite migration](docs/importing.md)
+- Python client: `../client`; its README and high-level API are preserved.
 
-- `backend` - Filter by backend name
-- `circuit_hash` - Filter by circuit hash
-- `n_qubits` - Filter by number of qubits
-- `limit` - Maximum results (default: 100)
-
-### Example Request
+## Verify
 
 ```bash
-# Create a shot
-curl -X POST http://localhost:8000/shots \
-  -H "Content-Type: application/json" \
-  -d '{"counts": {"00": 500, "11": 500}, "backend": "ibm_aachen", "circuit_hash": "abc123", "n_qubits": 2}'
-
-# Query shots
-curl "http://localhost:8000/shots?backend=ibm_aachen&n_qubits=2"
+cargo fmt --check
+cargo clippy --locked --all-targets -- -D warnings
+cargo test --locked
+# Isolated PostgreSQL integration tests; test role needs CREATE DATABASE:
+DATABASE_URL=postgres://postgres:password@localhost:5432/postgres \
+  cargo test --locked --test repository -- --ignored
 ```
-
-## Development
-
-```bash
-# Run tests
-cargo test
-
-# Run with logging
-RUST_LOG=debug cargo run
-```
-
-## Environment Variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `DATABASE_URL` | `sqlite:osr.db?mode=rwc` | SQLite database URL |
-| `OSR_BIND_ADDR` | `0.0.0.0:8000` | Server bind address |
-| `RUST_LOG` | `osr_server=debug` | Log level |
