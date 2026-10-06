@@ -268,6 +268,11 @@ impl Database {
         let mut b = QueryBuilder::<Postgres>::new(
             "SELECT to_jsonb(c)-'idempotency_key' FROM collections c WHERE TRUE",
         );
+        if !q.include_superseded {
+            b.push(
+                " AND NOT EXISTS(SELECT 1 FROM collections newer WHERE newer.supersedes_id=c.id)",
+            );
+        }
         macro_rules! filter {
             ($field:ident,$column:literal) => {
                 if let Some(v) = q.$field {
@@ -278,9 +283,18 @@ impl Database {
         filter!(backend, "backend");
         filter!(circuit_hash, "circuit_hash");
         filter!(n_qubits, "n_qubits");
-        filter!(result_kind, "result_kind");
+        if let Some(kind) = q.result_kind {
+            if kind == "counts" {
+                b.push(" AND result_kind LIKE '%_counts'");
+            } else {
+                b.push(" AND result_kind = ").push_bind(kind);
+            }
+        }
         filter!(circuit_association, "circuit_association");
         filter!(problem_id, "problem_id");
+        filter!(execution_id, "execution_id");
+        filter!(circuit_id, "circuit_id");
+        filter!(supersedes_id, "supersedes_id");
         filter!(calibration_id, "calibration_id");
         filter!(qaoa_p, "qaoa_p");
         if let Some(v) = q.executed_after {

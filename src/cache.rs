@@ -20,7 +20,7 @@ impl Database {
                 "cache requires SHA256, width 1..256 and shots 1..1000000",
             ));
         }
-        let runs=sqlx::query("SELECT id,shots FROM collections WHERE result_kind='hardware_counts' AND circuit_association='confirmed' AND backend=$1 AND circuit_hash=$2 AND n_qubits=$3 AND ($4::timestamptz IS NULL OR executed_at >= $4) AND ($5::timestamptz IS NULL OR executed_at <= $5) AND ($6::uuid IS NULL OR calibration_id=$6) ORDER BY created_at,id").bind(input.backend).bind(input.circuit_hash).bind(input.n_qubits).bind(input.executed_after).bind(input.executed_before).bind(input.calibration_id).fetch_all(&self.pool).await?;
+        let runs=sqlx::query("SELECT id,shots FROM collections c WHERE NOT EXISTS(SELECT 1 FROM collections newer WHERE newer.supersedes_id=c.id) AND result_kind='hardware_counts' AND circuit_association='confirmed' AND backend=$1 AND circuit_hash=$2 AND n_qubits=$3 AND ($4::timestamptz IS NULL OR executed_at >= $4) AND ($5::timestamptz IS NULL OR executed_at <= $5) AND ($6::uuid IS NULL OR calibration_id=$6) ORDER BY created_at,id").bind(input.backend).bind(input.circuit_hash).bind(input.n_qubits).bind(input.executed_after).bind(input.executed_before).bind(input.calibration_id).fetch_all(&self.pool).await?;
         let total = runs.iter().try_fold(0u64, |sum, r| {
             sum.checked_add(r.get::<i64, _>("shots") as u64)
                 .ok_or_else(|| bad("cache population overflow"))

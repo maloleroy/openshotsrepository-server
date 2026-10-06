@@ -27,7 +27,10 @@ impl BitString {
         }))
     }
     pub fn parse(s: &str, width: u16) -> Result<Self, AppError> {
-        if s.len() != width as usize || !s.bytes().all(|b| b == b'0' || b == b'1') {
+        if !(1..=256).contains(&width)
+            || s.len() != width as usize
+            || !s.bytes().all(|b| b == b'0' || b == b'1')
+        {
             return Err(bad("state must be a fixed-width binary string"));
         }
         let mut words = [0u64; 4];
@@ -125,7 +128,9 @@ pub fn decode(bytes: &[u8]) -> Result<Block, AppError> {
     })
 }
 pub fn encode(width: u16, entries: &[(BitString, Value)]) -> Vec<u8> {
-    let weighted = matches!(entries[0].1, Value::Weight(_));
+    let weighted = entries
+        .first()
+        .is_some_and(|entry| matches!(entry.1, Value::Weight(_)));
     let mut bytes = b"OSB1".to_vec();
     bytes.extend(width.to_le_bytes());
     bytes.extend([u8::from(weighted), 0]);

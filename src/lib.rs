@@ -8,7 +8,7 @@ use crate::{
     binary::{BitString, Value as SampleValue},
     db::Database,
     error::{AppError, bad},
-    models::{CacheInput, CollectionInput, CollectionQuery},
+    models::{CacheInput, CollectionInput, CollectionQuery, ResourceQuery},
 };
 use axum::{
     Json, Router,
@@ -186,11 +186,6 @@ async fn get_artifact(
     )
         .into_response())
 }
-#[derive(Deserialize)]
-struct Page {
-    cursor: Option<Uuid>,
-    limit: Option<i64>,
-}
 async fn resource_create(
     State(s): State<AppState>,
     Path(name): Path<String>,
@@ -208,12 +203,9 @@ async fn resource_get(
 async fn resource_list(
     State(s): State<AppState>,
     Path(name): Path<String>,
-    Query(q): Query<Page>,
+    Query(q): Query<ResourceQuery>,
 ) -> Result<Json<Value>, AppError> {
-    Ok(Json(
-        s.db.resources(&name, q.cursor, q.limit.unwrap_or(100))
-            .await?,
-    ))
+    Ok(Json(s.db.resources(&name, q).await?))
 }
 async fn create_collection(
     State(s): State<AppState>,

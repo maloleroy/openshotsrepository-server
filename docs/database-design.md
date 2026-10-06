@@ -4,9 +4,9 @@
 
 OSR uses PostgreSQL (15 or newer) for the public multi-user service. Metadata and links are relational; sample payloads are immutable binary blocks. PostgreSQL supports concurrent transactions through MVCC and stores binary values as `bytea` ([concurrency](https://www.postgresql.org/docs/current/mvcc-intro.html), [binary data](https://www.postgresql.org/docs/current/datatype-binary.html)). SQLite is retained as a read-only legacy migration input, not the production storage engine.
 
-Every resource ID is a server-generated UUIDv4. Content hashes identify bytes or exact circuit fingerprints; they are not resource IDs. No authentication, API keys or rate limiting is introduced. Upload sizes and numerical validation are resource/data-integrity bounds, configurable where appropriate.
+Every resource ID is a server-generated UUIDv4. Content hashes identify bytes or exact circuit fingerprints; they are not resource IDs. No authentication, API keys or rate limiting is introduced. Upload sizes and numerical validation are resource/data-integrity bounds, documented in the deployment guide.
 
-A collection describes one result distribution. It retains its own source and execution even when clients aggregate counts across runs. Published collections, their blocks, and their metadata cannot be edited or deleted through the API. Corrections create a new collection with `supersedes_id`; analysis products reference `parent_ids`. Missing acquisition details stay null. Ingestion time is separate from execution time and source filename date labels.
+A collection describes one result distribution. It retains its own source and execution even when clients aggregate counts across runs. Published collections, their blocks, and their metadata cannot be edited or deleted through the API. Corrections create a new collection with `supersedes_id`; analysis products reference `parents`. Missing acquisition details stay null. Ingestion time is separate from execution time and source filename date labels.
 
 ## Entities
 
@@ -20,7 +20,7 @@ A collection describes one result distribution. It retains its own source and ex
 | `calibrations` | Backend, snapshot/property times and units, source/date label, completeness, physical-qubit/gate properties, original artifact |
 | `executions` | Backend, bound circuit, optional provider job ID, execution times/date label, options, calibration and physical/measurement mappings |
 | `collections` | Result kind, measured width, indexed backend/circuit/problem/p/time/calibration, execution, tags, version/parent/source links and totals |
-| `collection_chunks` | Sorted disjoint sample/value blocks with checksum, entry/shot totals and cumulative read position |
+| `collection_chunks` | Sorted disjoint sample/value blocks with checksum, entry/shot totals for computing read positions |
 | `uploads`, `upload_chunks` | Unpublished staging data; transactions publish a complete validated collection atomically |
 
 Typed definition bodies are retained as JSONB alongside columns used for indexed search. This preserves problem-specific fields and property units without inventing a separate SQL table for every quantum algorithm. Relationships use foreign keys. Definitions and calibration are supplied explicitly; no fake-backend or later-calibration substitution fills missing execution metadata.
@@ -42,7 +42,7 @@ erDiagram
 
 In Rust, a bitstring is `[u64; 4]`: word 0 contains bits 0–63, word 3 bits 192–255. Bit 0 is the least significant integer/classical bit. Measured width is **1–256**; unused high bits must be zero. Display strings are exactly `width` characters, most significant first. Source conventions are recorded explicitly; CPLEX solution strings and array columns are converted using their declared source ordering. Physical wires, circuit width, measured bits and problem variables remain distinct.
 
-Counts use `u32` occurrences, strictly positive. Duplicate bitstrings are combined with checked addition before upload, never wrapped or saturated. Collection/aggregate totals use `u64`, bounded by PostgreSQL's signed BIGINT range. Float distributions use finite `f64`; probabilities are nonnegative and sum to one within 1e-9, quasi-probabilities allow negatives and also sum to one. `weighted_samples` supports finite nonnegative unnormalized weights. Hardware, simulation, mitigated, generated and unknown-origin counts are separate kinds. Floating values never become integer counts implicitly.
+Counts use `u32` occurrences, strictly positive. Source observations are aggregated before upload, with occurrence overflow rejected. Duplicate encoded keys are rejected. Collection/aggregate totals use `u64`, bounded by PostgreSQL's signed BIGINT range. Float distributions use finite `f64`; probabilities are nonnegative and sum to one within 1e-9, quasi-probabilities allow negatives and also sum to one. `weighted_samples` supports finite nonnegative unnormalized weights. Hardware, simulation, mitigated, generated and unknown-origin counts are separate kinds. Floating values never become integer counts implicitly.
 
 ### OSB1 binary block
 
@@ -63,9 +63,9 @@ A pending upload is mutable staging, not a published collection. Chunks are numb
 
 ## Query and compatibility API
 
-`/collections` pages metadata using an immutable ingestion-time/UUID cursor; block reads fetch one chunk at a time. Filters include backend, exact circuit fingerprint, measured width, kind, problem, p, execution time and calibration. Client `results()`, `results_int()`, `.filter()`, `.concat()`, `OSRClient` and `SamplerCache` remain available. Small `/shots` JSON requests/responses remain a compatibility interface; large collections use bulk endpoints, with an explicit error instead of partial JSON results.
+Queries and cache reuse exclude superseded versions by default; include_superseded exposes the full history. `/collections` pages metadata using an immutable ingestion-time/UUID cursor; block reads fetch one chunk at a time. Filters include backend, exact circuit fingerprint, measured width, kind, problem, p, execution time and calibration. Client `results()`, `results_int()`, `.filter()`, `.concat()`, `OSRClient` and `SamplerCache` remain available. Small `/shots` JSON requests/responses remain a compatibility interface; large collections use bulk endpoints, with an explicit error instead of partial JSON results.
 
-Circuit fingerprints use SHA-256 of QASM3 UTF-8 (`qasm3_sha256_v1`), preserving the existing client's quantum-circuit hash convention. The bound circuit retains numerical gate parameters; no mandatory duplicate gamma/beta parameter table is introduced. QAOA p is separate searchable metadata. Artifact-byte fingerprints remain usable when QASM3 export is unavailable, but are a different explicit scheme. Unsupported Python objects do not receive repr-based circuit identities.
+Circuit fingerprints use SHA-256 of QASM3 UTF-8 (`qasm3-sha256-v1`), preserving the existing client's quantum-circuit hash convention. The bound circuit retains numerical gate parameters; no mandatory duplicate gamma/beta parameter table is introduced. QAOA p is separate searchable metadata. Artifact-byte fingerprints remain usable when QASM3 export is unavailable, but are a different explicit scheme. Unsupported Python objects do not receive repr-based circuit identities.
 
 Sampler cache requests match **raw hardware counts, exact bound circuit, requested backend and measured width**. Historical runs may be combined, with optional execution-date/calibration filters. Simulation/derived/probability results stay available via explicit typed queries. The server selects exactly the requested number of observations without replacement from histogram mass; returned probabilities use the actual returned total. Unknown backend, unsupported execution options or unsupported input forms delegate to the wrapped sampler. V2 results retain PUB shape and classical registers; reconstructed shot order is labeled as such. Cache misses preserve the wrapped sampler result and auto-store completed results once, retaining job/execution metadata when available. [Qiskit documents the V2 PUB/register result format](https://quantum.cloud.ibm.com/docs/en/api/qiskit/primitives).
 

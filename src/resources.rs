@@ -218,17 +218,50 @@ impl Database {
     pub async fn resources(
         &self,
         name: &str,
-        cursor: Option<Uuid>,
-        limit: i64,
+        q: crate::models::ResourceQuery,
     ) -> Result<Value, AppError> {
-        fields(name)?;
+        let columns = fields(name)?;
+        let limit = q.limit.unwrap_or(100);
         if !(1..=1000).contains(&limit) {
             return Err(bad("limit must be 1..1000"));
         }
-        if let Some(id) = cursor {
+        if let Some(id) = q.cursor {
             self.resource(name, id).await?;
         }
-        let mut items:Vec<Value>=sqlx::query_scalar(&format!("SELECT to_jsonb(r)-'request_hash'-'idempotency_key' FROM {name} r WHERE $1::uuid IS NULL OR (created_at,id)<(SELECT created_at,id FROM {name} WHERE id=$1) ORDER BY created_at DESC,id DESC LIMIT $2")).bind(cursor).bind(limit+1).fetch_all(&self.pool).await?;
+        let mut b = sqlx::QueryBuilder::<sqlx::Postgres>::new(format!(
+            "SELECT to_jsonb(r)-'request_hash'-'idempotency_key' FROM {name} r WHERE TRUE"
+        ));
+        macro_rules! filter {
+            ($field:ident) => {
+                if let Some(value) = q.$field {
+                    if !columns.contains(&stringify!($field)) {
+                        return Err(bad(concat!(
+                            "unsupported resource filter: ",
+                            stringify!($field)
+                        )));
+                    }
+                    b.push(concat!(" AND ", stringify!($field), " = "))
+                        .push_bind(value);
+                }
+            };
+        }
+        filter!(problem_id);
+        filter!(status);
+        filter!(backend);
+        filter!(kind);
+        filter!(circuit_hash);
+        filter!(n_variables);
+        filter!(qaoa_p);
+        if let Some(cursor) = q.cursor {
+            b.push(format!(
+                " AND (created_at,id)<(SELECT created_at,id FROM {name} WHERE id="
+            ))
+            .push_bind(cursor)
+            .push(")");
+        }
+        b.push(" ORDER BY created_at DESC,id DESC LIMIT ")
+            .push_bind(limit + 1);
+        let mut items: Vec<Value> = b.build_query_scalar().fetch_all(&self.pool).await?;
         let more = items.len() > limit as usize;
         if more {
             items.pop();

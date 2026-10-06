@@ -91,12 +91,17 @@ pub fn valid_hash(s: &str) -> bool {
 }
 #[derive(Default, Deserialize)]
 pub struct CollectionQuery {
+    #[serde(default)]
+    pub include_superseded: bool,
     pub backend: Option<String>,
     pub circuit_hash: Option<String>,
     pub n_qubits: Option<i32>,
     pub result_kind: Option<String>,
     pub circuit_association: Option<String>,
     pub problem_id: Option<Uuid>,
+    pub execution_id: Option<Uuid>,
+    pub circuit_id: Option<Uuid>,
+    pub supersedes_id: Option<Uuid>,
     pub calibration_id: Option<Uuid>,
     pub qaoa_p: Option<i32>,
     pub executed_after: Option<DateTime<Utc>>,
@@ -113,4 +118,17 @@ pub struct CacheInput {
     pub executed_after: Option<DateTime<Utc>>,
     pub executed_before: Option<DateTime<Utc>>,
     pub calibration_id: Option<Uuid>,
+}
+
+#[derive(Default, Deserialize)]
+pub struct ResourceQuery {
+    pub cursor: Option<Uuid>,
+    pub limit: Option<i64>,
+    pub problem_id: Option<Uuid>,
+    pub status: Option<String>,
+    pub backend: Option<String>,
+    pub kind: Option<String>,
+    pub circuit_hash: Option<String>,
+    pub n_variables: Option<i32>,
+    pub qaoa_p: Option<i32>,
 }

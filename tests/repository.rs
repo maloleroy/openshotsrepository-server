@@ -202,6 +202,33 @@ async fn resources_solutions_and_http_errors(pool: PgPool) {
     );
     let app = axum_test::TestServer::new(create_router(AppState { db: Arc::new(db) })).unwrap();
     app.get("/health").await.assert_status_ok();
+    let response = app
+        .get(&format!(
+            "/solutions?problem_id={}&status=optimal",
+            problem["id"].as_str().unwrap()
+        ))
+        .await;
+    response.assert_status_ok();
+    assert_eq!(
+        response.json::<serde_json::Value>()["items"]
+            .as_array()
+            .unwrap()
+            .len(),
+        1
+    );
+    let response = app
+        .get(&format!("/solutions?problem_id={}", Uuid::new_v4()))
+        .await;
+    response.assert_status_ok();
+    assert!(
+        response.json::<serde_json::Value>()["items"]
+            .as_array()
+            .unwrap()
+            .is_empty()
+    );
+    app.get("/problems?backend=device")
+        .await
+        .assert_status_bad_request();
     app.delete(&format!("/shots/{}", Uuid::new_v4()))
         .await
         .assert_status(axum::http::StatusCode::METHOD_NOT_ALLOWED);
@@ -212,4 +239,88 @@ async fn resources_solutions_and_http_errors(pool: PgPool) {
     app.get("/collections?limit=0")
         .await
         .assert_status_bad_request();
+}
+
+#[sqlx::test(migrations = "./migrations/postgres")]
+#[ignore = "requires PostgreSQL"]
+async fn concurrent_replay_has_one_publication(pool: PgPool) {
+    let db = Database::new(pool.clone());
+    let (a, b) = tokio::join!(
+        db.start(input("hardware_counts"), Some("concurrent".into())),
+        db.start(input("hardware_counts"), Some("concurrent".into()))
+    );
+    let a = a.unwrap();
+    assert_eq!(a["id"], b.unwrap()["id"]);
+    let id: Uuid = a["id"].as_str().unwrap().parse().unwrap();
+    let bytes = encode(256, &[(BitString([0; 4]), Value::Count(10))]);
+    let (a, b) = tokio::join!(db.put_chunk(id, 0, &bytes), db.put_chunk(id, 0, &bytes));
+    a.unwrap();
+    b.unwrap();
+    let (a, b) = tokio::join!(db.finalize(id), db.finalize(id));
+    assert_eq!(a.unwrap(), b.unwrap());
+    let count: i64 = sqlx::query_scalar("SELECT count(*) FROM collections")
+        .fetch_one(&pool)
+        .await
+        .unwrap();
+    assert_eq!(count, 1);
+}
+
+#[sqlx::test(migrations = "./migrations/postgres")]
+#[ignore = "requires PostgreSQL"]
+async fn corrections_remove_old_cache_data_and_preserve_history(pool: PgPool) {
+    let db = Database::new(pool);
+    let id: Uuid = db.start(input("hardware_counts"), None).await.unwrap()["id"]
+        .as_str()
+        .unwrap()
+        .parse()
+        .unwrap();
+    db.put_chunk(
+        id,
+        0,
+        &encode(256, &[(BitString([0; 4]), Value::Count(10))]),
+    )
+    .await
+    .unwrap();
+    db.finalize(id).await.unwrap();
+    let mut correction = input("simulation_counts");
+    correction.supersedes_id = Some(id);
+    let new_id: Uuid = db.start(correction, None).await.unwrap()["id"]
+        .as_str()
+        .unwrap()
+        .parse()
+        .unwrap();
+    db.put_chunk(
+        new_id,
+        0,
+        &encode(256, &[(BitString([1, 0, 0, 0]), Value::Count(10))]),
+    )
+    .await
+    .unwrap();
+    db.finalize(new_id).await.unwrap();
+    let latest = db.list(CollectionQuery::default()).await.unwrap();
+    assert_eq!(latest["items"].as_array().unwrap().len(), 1);
+    assert_eq!(latest["items"][0]["id"], new_id.to_string());
+    let all = db
+        .list(CollectionQuery {
+            include_superseded: true,
+            ..Default::default()
+        })
+        .await
+        .unwrap();
+    assert_eq!(all["items"].as_array().unwrap().len(), 2);
+    assert_eq!(db.collection(id).await.unwrap()["shots"], 10);
+    let result = db
+        .sample(CacheInput {
+            backend: "device".into(),
+            circuit_hash: "a".repeat(64),
+            n_qubits: 256,
+            shots: 1,
+            executed_after: None,
+            executed_before: None,
+            calibration_id: None,
+        })
+        .await
+        .unwrap();
+    assert_eq!(result["hit"], false);
+    assert_eq!(result["available_shots"], 0);
 }
