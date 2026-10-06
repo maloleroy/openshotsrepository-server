@@ -1,6 +1,6 @@
 # Source data audit for OSR
 
-Audit date: 2026-10-06. This completes item 1 (exploration). Database design, migration, imports, server changes and client changes have not started.
+Audit date: 2026-10-06. This document records item 1 (exploration), completed before database design and implementation. The subsequent makeover is documented in database-design.md and importing.md.
 
 ## Scope and decisions
 
