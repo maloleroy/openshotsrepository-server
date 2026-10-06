@@ -928,7 +928,7 @@ class Importer:
             nblocks = 0
             for nblocks, block in enumerate(blocks, 1):
                 self.client.put_chunk(upload["id"], nblocks - 1, block)
-            result = self.client.finalize_upload(upload["id"])
+            result = self.client.finalize_upload(upload["id"], expected_chunks=nblocks)
         if (
             result.metadata["shots"] != int(row["shots"])
             or result.metadata["entries"] != int(row["unique_samples"])

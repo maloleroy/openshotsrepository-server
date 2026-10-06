@@ -239,6 +239,20 @@ async fn resources_solutions_and_http_errors(pool: PgPool) {
     app.get("/collections?limit=0")
         .await
         .assert_status_bad_request();
+    for path in [
+        "/collections?backed=device",
+        "/solutions?problemid=invalid",
+        "/shots?circut_hash=invalid",
+    ] {
+        app.get(path).await.assert_status_bad_request();
+    }
+    app.post("/cache/sample")
+        .json(&json!({
+            "backend":"device", "circuit_hash":"a".repeat(64), "n_qubits":256,
+            "shots":1, "calibraton_id":Uuid::new_v4(),
+        }))
+        .await
+        .assert_status(axum::http::StatusCode::UNPROCESSABLE_ENTITY);
 }
 
 #[sqlx::test(migrations = "./migrations/postgres")]
@@ -263,6 +277,57 @@ async fn concurrent_replay_has_one_publication(pool: PgPool) {
         .await
         .unwrap();
     assert_eq!(count, 1);
+}
+
+#[sqlx::test(migrations = "./migrations/postgres")]
+#[ignore = "requires PostgreSQL"]
+async fn shorter_retries_cannot_publish_extra_staged_chunks(pool: PgPool) {
+    let db = Database::new(pool);
+    let id: Uuid = db.start(input("hardware_counts"), None).await.unwrap()["id"]
+        .as_str()
+        .unwrap()
+        .parse()
+        .unwrap();
+    for index in 0..2 {
+        db.put_chunk(
+            id,
+            index,
+            &encode(
+                256,
+                &[(BitString([index as u64, 0, 0, 0]), Value::Count(10))],
+            ),
+        )
+        .await
+        .unwrap();
+    }
+    let app = axum_test::TestServer::new(create_router(AppState {
+        db: Arc::new(db.clone()),
+    }))
+    .unwrap();
+    app.post(&format!("/uploads/{id}/finalize?expected_chunks=1"))
+        .await
+        .assert_status(axum::http::StatusCode::CONFLICT);
+    assert!(db.collection(id).await.is_err());
+    assert_eq!(
+        db.upload(id).await.unwrap()["chunks"]
+            .as_array()
+            .unwrap()
+            .len(),
+        2
+    );
+    app.post(&format!("/uploads/{id}/finalize?expected_chunks=2"))
+        .await
+        .assert_status_ok();
+    assert_eq!(db.collection(id).await.unwrap()["shots"], 20);
+    app.post(&format!("/uploads/{id}/finalize?expected_chunks=1"))
+        .await
+        .assert_status(axum::http::StatusCode::CONFLICT);
+    app.post(&format!("/uploads/{id}/finalize?expected_chunks=2"))
+        .await
+        .assert_status_ok();
+    app.post(&format!("/uploads/{id}/finalize?expected_chunks=0"))
+        .await
+        .assert_status_bad_request();
 }
 
 #[sqlx::test(migrations = "./migrations/postgres")]

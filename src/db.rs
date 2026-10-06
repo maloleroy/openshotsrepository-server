@@ -131,6 +131,16 @@ impl Database {
         Ok(())
     }
     pub async fn finalize(&self, id: Uuid) -> Result<Value, AppError> {
+        self.finalize_expected(id, None).await
+    }
+    pub async fn finalize_expected(
+        &self,
+        id: Uuid,
+        expected_chunks: Option<i32>,
+    ) -> Result<Value, AppError> {
+        if expected_chunks.is_some_and(|n| n < 1) {
+            return Err(bad("expected_chunks must be positive"));
+        }
         let mut tx = self.pool.begin().await?;
         let upload = sqlx::query(
             "SELECT metadata,completed,idempotency_key FROM uploads WHERE id=$1 FOR UPDATE",
@@ -140,6 +150,15 @@ impl Database {
         .await?
         .ok_or(AppError::NotFound)?;
         if upload.get::<bool, _>("completed") {
+            let actual: i32 = sqlx::query_scalar("SELECT chunks FROM collections WHERE id=$1")
+                .bind(id)
+                .fetch_one(&mut *tx)
+                .await?;
+            if expected_chunks.is_some_and(|n| n != actual) {
+                return Err(AppError::Conflict(
+                    "retry has different number of chunks".into(),
+                ));
+            }
             tx.commit().await?;
             return self.collection(id).await;
         }
@@ -191,6 +210,11 @@ impl Database {
             }
         }
         let chunks=sqlx::query("SELECT chunk_index,entries,shots,weight_sum,first_state,last_state FROM upload_chunks WHERE upload_id=$1 ORDER BY chunk_index").bind(id).fetch_all(&mut *tx).await?;
+        if expected_chunks.is_some_and(|n| n as usize != chunks.len()) {
+            return Err(AppError::Conflict(
+                "upload has different number of chunks".into(),
+            ));
+        }
         if chunks.is_empty() {
             return Err(bad("cannot publish an empty collection"));
         }

@@ -106,11 +106,17 @@ async fn put_chunk(
     s.db.put_chunk(id, index, &body).await?;
     Ok(StatusCode::NO_CONTENT)
 }
+#[derive(Deserialize, Default)]
+#[serde(deny_unknown_fields)]
+struct FinalizeQuery {
+    expected_chunks: Option<i32>,
+}
 async fn finalize(
     State(s): State<AppState>,
     Path(id): Path<Uuid>,
+    Query(q): Query<FinalizeQuery>,
 ) -> Result<Json<Value>, AppError> {
-    Ok(Json(s.db.finalize(id).await?))
+    Ok(Json(s.db.finalize_expected(id, q.expected_chunks).await?))
 }
 async fn collection(
     State(s): State<AppState>,
@@ -148,6 +154,7 @@ async fn sample(
     Ok(Json(s.db.sample(v).await?))
 }
 #[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
 struct ArtifactQuery {
     format: String,
     #[serde(default = "default_media")]
@@ -264,15 +271,10 @@ async fn create_collection(
         s.db.put_chunk(id, i as i32, &binary::encode(input.n_qubits as u16, chunk))
             .await?;
     }
-    if upload["completed"] == true
-        && s.db.collection(id).await?["chunks"].as_u64()
-            != Some(entries.len().div_ceil(binary::MAX_ENTRIES) as u64)
-    {
-        return Err(AppError::Conflict(
-            "retry has different number of chunks".into(),
-        ));
-    }
-    Ok(Json(s.db.finalize(id).await?))
+    Ok(Json(
+        s.db.finalize_expected(id, Some(entries.len().div_ceil(binary::MAX_ENTRIES) as i32))
+            .await?,
+    ))
 }
 async fn materialize(db: &Database, id: Uuid) -> Result<Value, AppError> {
     let meta = db.collection(id).await?;

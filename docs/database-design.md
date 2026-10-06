@@ -61,6 +61,8 @@ At most 65,536 entries per block. Width-aware disk/wire encoding retains the `[u
 
 A pending upload is mutable staging, not a published collection. Chunks are numbered contiguously from zero. Replaying identical chunks is idempotent; conflicting bytes fail. Finalization locks the upload, verifies all chunks and totals, and publishes metadata/blocks in one transaction. Clients can resume interrupted imports using an explicit idempotency key. There is no public DELETE or UPDATE route for published resources.
 
+Clients assert the expected chunk count at finalization. The assertion is checked while holding the upload lock, so an interrupted longer attempt cannot silently add observations to a shorter retry. A mismatch leaves staging unpublished; identical completed replays still succeed.
+
 ## Query and compatibility API
 
 Queries and cache reuse exclude superseded versions by default; include_superseded exposes the full history. `/collections` pages metadata using an immutable ingestion-time/UUID cursor; block reads fetch one chunk at a time. Filters include backend, exact circuit fingerprint, measured width, kind, problem, p, execution time and calibration. Client `results()`, `results_int()`, `.filter()`, `.concat()`, `OSRClient` and `SamplerCache` remain available. Small `/shots` JSON requests/responses remain a compatibility interface; large collections use bulk endpoints, with an explicit error instead of partial JSON results.

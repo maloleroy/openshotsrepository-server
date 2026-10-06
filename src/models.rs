@@ -37,6 +37,7 @@ pub struct CollectionInput {
     pub parents: Vec<Uuid>,
 }
 #[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
 pub struct SourceLink {
     pub source_id: Uuid,
     #[serde(default = "object")]
@@ -90,6 +91,7 @@ pub fn valid_hash(s: &str) -> bool {
             .all(|b| b.is_ascii_digit() || (b'a'..=b'f').contains(&b))
 }
 #[derive(Default, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct CollectionQuery {
     #[serde(default)]
     pub include_superseded: bool,
@@ -110,6 +112,7 @@ pub struct CollectionQuery {
     pub limit: Option<i64>,
 }
 #[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct CacheInput {
     pub backend: String,
     pub circuit_hash: String,
@@ -121,6 +124,7 @@ pub struct CacheInput {
 }
 
 #[derive(Default, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct ResourceQuery {
     pub cursor: Option<Uuid>,
     pub limit: Option<i64>,

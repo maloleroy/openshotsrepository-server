@@ -1,6 +1,6 @@
 # OSR 0.2 HTTP API
 
-JSON is UTF-8. IDs are UUIDv4. SHA256 values are lowercase hex. Errors contain `{"error":"..."}` with HTTP 400 (invalid input/links), 404 (missing resource), 409 (conflicting replay/immutable resource), 413 (use bulk API), or 500 (internal failure). Published records have no edit/delete operations; create a correction with `supersedes_id`.
+JSON is UTF-8. IDs are UUIDv4. SHA256 values are lowercase hex. Application errors contain `{"error":"..."}` with HTTP 400 (invalid input/links), 404 (missing resource), 409 (conflicting replay/immutable resource), 413 (use bulk API), or 500 (internal failure). Axum extraction errors use text responses: invalid query fields return 400; JSON that does not match a request type returns 422. Query parameters and typed collection/cache/source-link fields reject unknown names; extensible scientific metadata belongs in metadata/data/locator objects. Published records have no edit/delete operations; create a correction with `supersedes_id`.
 
 ## Definitions
 
@@ -52,6 +52,8 @@ The illustrative layout is incomplete; supplied mappings must describe their bas
 Counts kinds: hardware_counts, simulation_counts, mitigated_counts, generated_counts, unknown_counts. Float kinds: probabilities, quasi_probabilities, weighted_samples. Hardware counts require a backend. Probability sums must be one within 1e-9; only quasi-probabilities may be negative. Source shot order is not stored.
 
 Upload creation returns `{"id":"...","completed":false}`. Send OSB1 bytes (see database-design.md) to `PUT /uploads/{id}/chunks/{index}`. Indices start at zero. Uploading the same chunk again succeeds; different bytes at that index conflict. Inspect `GET /uploads/{id}` to resume. `POST /uploads/{id}/finalize` publishes all chunks and links atomically and returns collection metadata. Repeating finalization returns the same published collection. Incomplete/invalid staging never appears in result queries.
+
+Use `POST /uploads/{id}/finalize?expected_chunks=N` to assert the intended number of blocks. The check occurs under the publication lock and rejects a mismatch with HTTP 409, including on an already published replay. This prevents a shorter retry from publishing extra chunks left by an interrupted request. The Python client and JSON convenience uploads always supply this assertion. Custom importers should supply it too; omitting it explicitly publishes all staged blocks. `N` must be positive.
 
 `POST /collections` is a convenience form of the same metadata plus either `counts` or `weights` as fixed-width binary-string keys. It accepts up to 100,000 entries. Larger inputs use binary uploads.
 
